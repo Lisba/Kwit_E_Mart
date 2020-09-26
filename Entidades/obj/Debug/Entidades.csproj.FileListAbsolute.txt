@@ -1,0 +1,6 @@
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Entidades\bin\Debug\Entidades.dll
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Entidades\bin\Debug\Entidades.pdb
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Entidades\obj\Debug\Entidades.dll
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Entidades\obj\Debug\Entidades.pdb
