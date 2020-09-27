@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Entidades
 {
-    static class Validaciones
+    public static class Validaciones
     {
         #region Methods
         /// <summary>
@@ -14,16 +15,13 @@ namespace Entidades
         /// </summary>
         /// <param name="strInt"></param>
         /// <returns>Retorna el numero entero ó -1 en caso de no ser un entero.</returns>
-        static public int ValidarInt(string strInt)
+        static public int ValidarInt(string strValue)
         {
-            bool isInt;
-            int intReturned;
+            int returnValue;
 
-            isInt = int.TryParse(strInt, out intReturned);
-
-            if (isInt)
+            if (int.TryParse(strValue, out returnValue))
             {
-                return intReturned;
+                return returnValue;
             }
             else
             {
@@ -31,37 +29,77 @@ namespace Entidades
             }
         }
 
-        static public double ValidarDouble(string strDouble)
+        /// <summary>
+        /// Valida que el string ingresado sea un double válido.
+        /// </summary>
+        /// <param name="strValue"></param>
+        /// <returns>Retorna el numero double ó -1 en caso de no ser un double.</returns>
+        static public double ValidarDouble(string strValue)
         {
-            bool isDouble = true;
-            double doubleReturned = -1;
-            int comaCounter = 0;
+            double returnValue;
 
-            foreach (char character in strDouble)
+            if (double.TryParse(strValue, out returnValue))
             {
-                if ((character < '0' || character > '9') && (character != ',' && character != '.'))
-                {
-                    isDouble = false;
-                    break;
-                }
+                return returnValue;
+            }
+            else
+            {
+                return -1;
+            }
+        }
 
-                if (character == ',' || character == '.')
-                {
-                    comaCounter++;
-                }
+        /// <summary>
+        /// Valida que el string ingresado sea un long válido.
+        /// </summary>
+        /// <param name="strValue"></param>
+        /// <returns>Retorna el numero long ó -1 en caso de no ser un long.</returns>
+        static public long ValidarLong(string strValue)
+        {
+            long returnValue;
+
+            if (long.TryParse(strValue, out returnValue))
+            {
+                return returnValue;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// Valida que el string ingresado posea 2 ó mas caracteres.
+        /// </summary>
+        /// <param name="strValue"></param>
+        /// <returns>Retorna true si el string posee 2 ó mas caracteres, caso contrario retorna false.</returns>
+        static public bool ValidarString(string strValue)
+        {
+            bool returnValue = false;
+
+            if(strValue.Length > 1)
+            {
+                returnValue = true;
             }
 
-            if (comaCounter > 1)
+            return returnValue;
+        }
+
+        /// <summary>
+        /// Valida una dirección de email.
+        /// </summary>
+        /// <param name="strValue"></param>
+        /// <returns>Retorna true si el email es válido, caso contrario retorna false.</returns>
+        static public bool ValidarEmail(string strValue)
+        {
+            bool returnValue = false;
+            string regex = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+
+            if (Regex.IsMatch(strValue, regex))
             {
-                isDouble = false;
+                returnValue = true;
             }
 
-            if (isDouble)
-            {
-                double.TryParse(strDouble, out doubleReturned);
-            }
-
-            return doubleReturned;
+            return returnValue;
         }
         #endregion
     }

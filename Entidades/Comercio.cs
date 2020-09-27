@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    static class Comercio
+    public static class Comercio
     {
         #region Fields
         static List<Producto> listaProductos;
