@@ -28,7 +28,7 @@ namespace Entidades
                 return -1;
             }
         }
-
+        
         /// <summary>
         /// Valida que el string ingresado sea un double válido.
         /// </summary>

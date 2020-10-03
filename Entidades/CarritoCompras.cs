@@ -6,11 +6,49 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class CarritoCompras
+    public static class CarritoCompras
     {
         #region Fields
-        List<Producto> listaProductosCarrito;
-        double precioTotal;
+        static List<Producto> listaProductosCarrito;
+        #endregion
+
+        public static List<Producto> ListaProductosCarrito
+        {
+            get
+            {
+                return listaProductosCarrito;
+            }
+        }
+
+        #region Constructor
+        static CarritoCompras()
+        {
+            listaProductosCarrito = new List<Producto>();
+        }
+        #endregion
+
+        #region Methods
+        public static void AddNewItemToShopCar(string nombre, int cantidad, double precioUnidad)
+        {
+            listaProductosCarrito.Add(new Producto(nombre, cantidad, precioUnidad));
+        }
+
+        public static void RemoveItemFromShopCar(Producto producto)
+        {
+            listaProductosCarrito.Remove(producto);
+        }
+
+        public static double GetPrecioTotal()
+        {
+            double total = 0;
+
+            foreach(Producto producto in listaProductosCarrito)
+            {
+                total += producto.PrecioUnidad;
+            }
+
+            return total;
+        }
         #endregion
     }
 }

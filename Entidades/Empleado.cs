@@ -67,7 +67,7 @@ namespace Entidades
         {
             get
             {
-                return Constrasenia;
+                return contrasenia;
             }
         }
         #endregion

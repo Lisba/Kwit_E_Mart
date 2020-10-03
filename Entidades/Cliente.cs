@@ -55,11 +55,6 @@ namespace Entidades
         #endregion
 
         #region Constructors
-        static Cliente()
-        {
-            id = 0;
-        }
-
         public Cliente(string nombre, string apellido, int dni, string email) : base(nombre, apellido, dni)
         {
             id++;

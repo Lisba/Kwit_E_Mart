@@ -15,7 +15,7 @@ namespace Entidades
         #endregion
 
         #region Properties
-        static public List<Producto> ListaProductos
+        public static List<Producto> ListaProductos
         {
             get
             {
@@ -23,7 +23,7 @@ namespace Entidades
             }
         }
 
-        static public List<Venta> ListaVentas
+        public static List<Venta> ListaVentas
         {
             get
             {
@@ -31,7 +31,7 @@ namespace Entidades
             }
         }
 
-        static public List<Persona> ListaPersonas
+        public static List<Persona> ListaPersonas
         {
             get
             {
@@ -108,6 +108,26 @@ namespace Entidades
             }
 
             return listaProductosMenorDiez;
+        }
+
+        static public void AddNewProduct(string nombre, int cantidad, double precioUnidad)
+        {
+            listaProductos.Add(new Producto(nombre, cantidad, precioUnidad));
+        }
+
+        static public void AddNewEmployee(string nombre, string apellido, int dni, ECargos cargo, string user, string constrasenia)
+        {
+            listaPersonas.Add(new Empleado(nombre, apellido, dni, cargo, user, constrasenia));
+        }
+
+        static public void AddNewClient(string nombre, string apellido, int dni, string email)
+        {
+            listaPersonas.Add(new Cliente(nombre, apellido, dni, email));
+        }
+
+        static public void AddnewSale(List<Producto> listaProductos, double precioTotal, Cliente cliente, Empleado empleado)
+        {
+            listaVentas.Add(new Venta(listaProductos, precioTotal, cliente, empleado));
         }
         #endregion
     }

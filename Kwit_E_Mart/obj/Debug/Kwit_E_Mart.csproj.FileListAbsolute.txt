@@ -1,0 +1,15 @@
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\bin\Debug\Kwit_E_Mart.exe.config
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\bin\Debug\Kwit_E_Mart.exe
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\bin\Debug\Kwit_E_Mart.pdb
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\bin\Debug\Entidades.dll
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\bin\Debug\Entidades.pdb
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.csprojAssemblyReference.cache
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.AltaClienteForm.resources
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.HomeForm.resources
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.LoginForm.resources
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.Properties.Resources.resources
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.csproj.GenerateResource.cache
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.csproj.CopyComplete
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.exe
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.pdb

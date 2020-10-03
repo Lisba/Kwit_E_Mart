@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Kwit_E_Mart
 {
-    public partial class Form1 : Form
+    public partial class AltaClienteForm : Form
     {
-        public Form1()
+        public AltaClienteForm()
         {
             InitializeComponent();
         }
