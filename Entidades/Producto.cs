@@ -9,7 +9,8 @@ namespace Entidades
     public class Producto
     {
         #region Fields
-        static int id;
+        static int idGlobal;
+        int id;
         string nombre;
         int cantidad;
         double precioUnidad;
@@ -20,7 +21,7 @@ namespace Entidades
         {
             get 
             {
-                return id; 
+                return id;
             }
         }
 
@@ -53,12 +54,12 @@ namespace Entidades
         #region Constructors
         static Producto()
         {
-            id = 0;
+            idGlobal = 1;
         }
 
         public Producto(string nombre, int cantidad, double precioUnidad)
         {
-            id++;
+            id = idGlobal++;
             this.nombre = nombre;
             this.cantidad = cantidad;
             this.precioUnidad = precioUnidad;

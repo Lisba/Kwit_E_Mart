@@ -73,21 +73,19 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(250, 59);
-            this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(229, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(229, 29);
             this.txtUsuario.TabIndex = 3;
             // 
             // txtContrasenia
             // 
             this.txtContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenia.Location = new System.Drawing.Point(250, 110);
-            this.txtContrasenia.Multiline = true;
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.PasswordChar = '*';
-            this.txtContrasenia.Size = new System.Drawing.Size(229, 26);
+            this.txtContrasenia.Size = new System.Drawing.Size(229, 32);
             this.txtContrasenia.TabIndex = 4;
             // 
             // LoginForm
@@ -103,6 +101,7 @@
             this.Controls.Add(this.btnLogin);
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hola! Cuéntame de tus credenciales!";

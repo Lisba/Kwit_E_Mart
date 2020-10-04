@@ -28,9 +28,9 @@ namespace Entidades
         #endregion
 
         #region Methods
-        public static void AddNewItemToShopCar(string nombre, int cantidad, double precioUnidad)
+        public static void AddNewItemToShopCar(Producto producto)
         {
-            listaProductosCarrito.Add(new Producto(nombre, cantidad, precioUnidad));
+            listaProductosCarrito.Add(producto);
         }
 
         public static void RemoveItemFromShopCar(Producto producto)
@@ -38,16 +38,21 @@ namespace Entidades
             listaProductosCarrito.Remove(producto);
         }
 
-        public static double GetPrecioTotal()
+        public static void RemoveAllItemsFromShopCar()
         {
-            double total = 0;
+            listaProductosCarrito.Clear();
+        }
+
+        public static double GetPrecioSubTotal()
+        {
+            double subTotal = 0;
 
             foreach(Producto producto in listaProductosCarrito)
             {
-                total += producto.PrecioUnidad;
+                subTotal += producto.PrecioUnidad;
             }
 
-            return total;
+            return subTotal;
         }
         #endregion
     }
