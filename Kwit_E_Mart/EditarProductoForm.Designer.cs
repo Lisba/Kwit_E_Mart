@@ -57,9 +57,10 @@
             this.btnEditarProducto.Location = new System.Drawing.Point(97, 213);
             this.btnEditarProducto.Name = "btnEditarProducto";
             this.btnEditarProducto.Size = new System.Drawing.Size(156, 39);
-            this.btnEditarProducto.TabIndex = 25;
+            this.btnEditarProducto.TabIndex = 4;
             this.btnEditarProducto.Text = "Editar Producto";
             this.btnEditarProducto.UseVisualStyleBackColor = false;
+            this.btnEditarProducto.Click += new System.EventHandler(this.btnEditarProducto_Click);
             // 
             // lblEditarPrecioUnidadProducto
             // 
@@ -99,21 +100,21 @@
             this.txtEditarCantidadProducto.Location = new System.Drawing.Point(172, 113);
             this.txtEditarCantidadProducto.Name = "txtEditarCantidadProducto";
             this.txtEditarCantidadProducto.Size = new System.Drawing.Size(169, 20);
-            this.txtEditarCantidadProducto.TabIndex = 21;
+            this.txtEditarCantidadProducto.TabIndex = 2;
             // 
             // txtEditarPrecioProducto
             // 
             this.txtEditarPrecioProducto.Location = new System.Drawing.Point(172, 151);
             this.txtEditarPrecioProducto.Name = "txtEditarPrecioProducto";
             this.txtEditarPrecioProducto.Size = new System.Drawing.Size(169, 20);
-            this.txtEditarPrecioProducto.TabIndex = 20;
+            this.txtEditarPrecioProducto.TabIndex = 3;
             // 
             // txtEditarNombreProducto
             // 
             this.txtEditarNombreProducto.Location = new System.Drawing.Point(172, 73);
             this.txtEditarNombreProducto.Name = "txtEditarNombreProducto";
             this.txtEditarNombreProducto.Size = new System.Drawing.Size(169, 20);
-            this.txtEditarNombreProducto.TabIndex = 19;
+            this.txtEditarNombreProducto.TabIndex = 1;
             // 
             // EditarProductoForm
             // 
@@ -129,8 +130,12 @@
             this.Controls.Add(this.txtEditarCantidadProducto);
             this.Controls.Add(this.txtEditarPrecioProducto);
             this.Controls.Add(this.txtEditarNombreProducto);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "EditarProductoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarProductoForm";
+            this.Load += new System.EventHandler(this.EditarProductoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -33,7 +33,7 @@ namespace Kwit_E_Mart
                     {
                         HomeForm homeForm = new HomeForm();
                         homeForm.lblEmpleadoHome.Text = empleado.SayNameLastname(empleado.Nombre, empleado.Apellido);
-                        homeForm.Show();
+                        homeForm.ShowDialog();
                         break;
                     }
                     else
@@ -51,8 +51,8 @@ namespace Kwit_E_Mart
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            Comercio.AddNewEmployee("Lisbaldy", "Ojeda", 12345678, ECargos.VendedorSenior, "lisba", "1234");
-            Comercio.AddNewEmployee("Jesus", "Leon", 12345687, ECargos.VendedorSemiSenior, "jesus", "5678");
+            Comercio.ListaPersonas.Add(new Empleado("Lisbaldy", "Ojeda", 12345678, ECargos.VendedorSenior, "lisba", "1234"));
+            Comercio.ListaPersonas.Add(new Empleado("Jesus", "Leon", 12345687, ECargos.VendedorSemiSenior, "jesus", "5678"));
         }
     }
 }

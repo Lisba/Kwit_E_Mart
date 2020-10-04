@@ -48,7 +48,6 @@ namespace Entidades
                 return precioUnidad;
             }
         }
-
         #endregion
 
         #region Constructors
@@ -62,6 +61,23 @@ namespace Entidades
             id = idGlobal++;
             this.nombre = nombre;
             this.cantidad = cantidad;
+            this.precioUnidad = precioUnidad;
+        }
+        #endregion
+
+        #region Methods
+        public void SetNombreProducto(string nombre)
+        {
+            this.nombre = nombre;
+        }
+
+        public void SetCantidadProducto(int cantidad)
+        {
+            this.cantidad = cantidad;
+        }
+
+        public void SetPrecioProducto(double precioUnidad)
+        {
             this.precioUnidad = precioUnidad;
         }
         #endregion

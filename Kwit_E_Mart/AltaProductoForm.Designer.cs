@@ -32,9 +32,9 @@
             this.lblPrecioUnidadProducto = new System.Windows.Forms.Label();
             this.lblCantidadProducto = new System.Windows.Forms.Label();
             this.lblNombreCliente = new System.Windows.Forms.Label();
-            this.txtApellidoCliente = new System.Windows.Forms.TextBox();
-            this.txtDniCliente = new System.Windows.Forms.TextBox();
-            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.txtCantidadProducto = new System.Windows.Forms.TextBox();
+            this.txtPrecioUnidadProducto = new System.Windows.Forms.TextBox();
+            this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.lblTituloAltaProducto = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -46,9 +46,10 @@
             this.btnAltaProducto.Location = new System.Drawing.Point(95, 207);
             this.btnAltaProducto.Name = "btnAltaProducto";
             this.btnAltaProducto.Size = new System.Drawing.Size(156, 39);
-            this.btnAltaProducto.TabIndex = 17;
+            this.btnAltaProducto.TabIndex = 4;
             this.btnAltaProducto.Text = "Agregar Producto";
             this.btnAltaProducto.UseVisualStyleBackColor = false;
+            this.btnAltaProducto.Click += new System.EventHandler(this.btnAltaProducto_Click);
             // 
             // lblPrecioUnidadProducto
             // 
@@ -58,7 +59,7 @@
             this.lblPrecioUnidadProducto.Location = new System.Drawing.Point(23, 145);
             this.lblPrecioUnidadProducto.Name = "lblPrecioUnidadProducto";
             this.lblPrecioUnidadProducto.Size = new System.Drawing.Size(125, 19);
-            this.lblPrecioUnidadProducto.TabIndex = 15;
+            this.lblPrecioUnidadProducto.TabIndex = 8;
             this.lblPrecioUnidadProducto.Text = "Precio Unidad";
             // 
             // lblCantidadProducto
@@ -69,7 +70,7 @@
             this.lblCantidadProducto.Location = new System.Drawing.Point(23, 107);
             this.lblCantidadProducto.Name = "lblCantidadProducto";
             this.lblCantidadProducto.Size = new System.Drawing.Size(83, 19);
-            this.lblCantidadProducto.TabIndex = 14;
+            this.lblCantidadProducto.TabIndex = 7;
             this.lblCantidadProducto.Text = "Cantidad";
             // 
             // lblNombreCliente
@@ -80,29 +81,29 @@
             this.lblNombreCliente.Location = new System.Drawing.Point(23, 67);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(73, 19);
-            this.lblNombreCliente.TabIndex = 13;
+            this.lblNombreCliente.TabIndex = 6;
             this.lblNombreCliente.Text = "Nombre";
             // 
-            // txtApellidoCliente
+            // txtCantidadProducto
             // 
-            this.txtApellidoCliente.Location = new System.Drawing.Point(170, 107);
-            this.txtApellidoCliente.Name = "txtApellidoCliente";
-            this.txtApellidoCliente.Size = new System.Drawing.Size(169, 20);
-            this.txtApellidoCliente.TabIndex = 11;
+            this.txtCantidadProducto.Location = new System.Drawing.Point(170, 107);
+            this.txtCantidadProducto.Name = "txtCantidadProducto";
+            this.txtCantidadProducto.Size = new System.Drawing.Size(169, 20);
+            this.txtCantidadProducto.TabIndex = 2;
             // 
-            // txtDniCliente
+            // txtPrecioUnidadProducto
             // 
-            this.txtDniCliente.Location = new System.Drawing.Point(170, 145);
-            this.txtDniCliente.Name = "txtDniCliente";
-            this.txtDniCliente.Size = new System.Drawing.Size(169, 20);
-            this.txtDniCliente.TabIndex = 10;
+            this.txtPrecioUnidadProducto.Location = new System.Drawing.Point(170, 145);
+            this.txtPrecioUnidadProducto.Name = "txtPrecioUnidadProducto";
+            this.txtPrecioUnidadProducto.Size = new System.Drawing.Size(169, 20);
+            this.txtPrecioUnidadProducto.TabIndex = 3;
             // 
-            // txtNombreCliente
+            // txtNombreProducto
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(170, 67);
-            this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(169, 20);
-            this.txtNombreCliente.TabIndex = 9;
+            this.txtNombreProducto.Location = new System.Drawing.Point(170, 67);
+            this.txtNombreProducto.Name = "txtNombreProducto";
+            this.txtNombreProducto.Size = new System.Drawing.Size(169, 20);
+            this.txtNombreProducto.TabIndex = 1;
             // 
             // lblTituloAltaProducto
             // 
@@ -112,7 +113,7 @@
             this.lblTituloAltaProducto.Location = new System.Drawing.Point(115, 23);
             this.lblTituloAltaProducto.Name = "lblTituloAltaProducto";
             this.lblTituloAltaProducto.Size = new System.Drawing.Size(123, 19);
-            this.lblTituloAltaProducto.TabIndex = 18;
+            this.lblTituloAltaProducto.TabIndex = 5;
             this.lblTituloAltaProducto.Text = "Alta Producto";
             // 
             // AltaProductoForm
@@ -126,10 +127,11 @@
             this.Controls.Add(this.lblPrecioUnidadProducto);
             this.Controls.Add(this.lblCantidadProducto);
             this.Controls.Add(this.lblNombreCliente);
-            this.Controls.Add(this.txtApellidoCliente);
-            this.Controls.Add(this.txtDniCliente);
-            this.Controls.Add(this.txtNombreCliente);
+            this.Controls.Add(this.txtCantidadProducto);
+            this.Controls.Add(this.txtPrecioUnidadProducto);
+            this.Controls.Add(this.txtNombreProducto);
             this.Name = "AltaProductoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaProductoForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -142,9 +144,9 @@
         private System.Windows.Forms.Label lblPrecioUnidadProducto;
         private System.Windows.Forms.Label lblCantidadProducto;
         private System.Windows.Forms.Label lblNombreCliente;
-        private System.Windows.Forms.TextBox txtApellidoCliente;
-        private System.Windows.Forms.TextBox txtDniCliente;
-        private System.Windows.Forms.TextBox txtNombreCliente;
+        private System.Windows.Forms.TextBox txtCantidadProducto;
+        private System.Windows.Forms.TextBox txtPrecioUnidadProducto;
+        private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.Label lblTituloAltaProducto;
     }
 }

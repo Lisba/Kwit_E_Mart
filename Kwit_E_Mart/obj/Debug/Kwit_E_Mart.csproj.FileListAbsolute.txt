@@ -13,3 +13,7 @@ C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Labo
 C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.csproj.CopyComplete
 C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.exe
 C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.pdb
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.AltaProductoForm.resources
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.EditarProductoForm.resources
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.BuscarProductoForm.resources
+C:\Users\usuario\Documents\Sistemas-UTN\2do cuatrimestre\Programación II y Laboratorio II\primer_parcial\Primer_parcial\Kwit_E_Mart\obj\Debug\Kwit_E_Mart.StockMenosDiezForm.resources
