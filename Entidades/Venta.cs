@@ -73,7 +73,9 @@ namespace Entidades
         {
             idGlobal = 1;
         }
+        #endregion
 
+        #region Methods
         public Venta(List<Producto> listaProductosVenta, double precioTotal, Cliente cliente, Empleado empleado)
         {
             id = idGlobal++;

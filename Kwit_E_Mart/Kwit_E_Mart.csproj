@@ -70,6 +70,12 @@
     <Compile Include="ConfirmarVentaForm.Designer.cs">
       <DependentUpon>ConfirmarVentaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetallesVentaEmpleadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetallesVentaEmpleadoForm.Designer.cs">
+      <DependentUpon>DetallesVentaEmpleadoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarProductoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmarVentaForm.resx">
       <DependentUpon>ConfirmarVentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetallesVentaEmpleadoForm.resx">
+      <DependentUpon>DetallesVentaEmpleadoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarProductoForm.resx">
       <DependentUpon>EditarProductoForm.cs</DependentUpon>

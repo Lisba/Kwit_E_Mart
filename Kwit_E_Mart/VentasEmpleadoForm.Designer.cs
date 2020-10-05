@@ -93,6 +93,7 @@
             this.dataGridViewVentasEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewVentasEmpleado.Size = new System.Drawing.Size(776, 324);
             this.dataGridViewVentasEmpleado.TabIndex = 13;
+            this.dataGridViewVentasEmpleado.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewVentasEmpleado_CellMouseDoubleClick);
             // 
             // VentasEmpleadoForm
             // 

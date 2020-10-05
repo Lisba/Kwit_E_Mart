@@ -15,12 +15,14 @@ namespace Kwit_E_Mart
     {
         #region Fields
         double precioTotalAPagar;
+        List<Producto> listaProductosComprados;
         #endregion
 
         #region Constructor
         public ConfirmarVentaForm()
         {
             InitializeComponent();
+            listaProductosComprados = new List<Producto>();
         }
         #endregion
 
@@ -46,9 +48,18 @@ namespace Kwit_E_Mart
 
         private void btnConfirmarCompra_Click(object sender, EventArgs e)
         {
-            Comercio.ListaVentas.Add(new Venta(CarritoCompras.ListaProductosCarrito, precioTotalAPagar, SeleccionarClienteForm.ClienteSeleccionado, HomeForm.EmpleadoActual));
+            CapturarListaProductosComprados();
+            Comercio.ListaVentas.Add(new Venta(listaProductosComprados, precioTotalAPagar, SeleccionarClienteForm.ClienteSeleccionado, HomeForm.EmpleadoActual));
             Producto.RestarStockAProducto();
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void CapturarListaProductosComprados()
+        {
+            foreach (Producto producto in CarritoCompras.ListaProductosCarrito)
+            {
+                listaProductosComprados.Add(producto);
+            }
         }
         #endregion
     }

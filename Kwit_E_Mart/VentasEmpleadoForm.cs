@@ -15,6 +15,18 @@ namespace Kwit_E_Mart
     {
         #region Fields
         List<Venta> listaVentasEmpleadoSeleccionado;
+        string idDoubleClickedRow;
+        static Venta ventaSeleccionada;
+        #endregion
+
+        #region Properties
+        public static Venta VentaSeleccionada
+        {
+            get
+            {
+                return ventaSeleccionada;
+            }
+        }
         #endregion
 
         #region Constructors
@@ -49,6 +61,39 @@ namespace Kwit_E_Mart
                     listaVentasEmpleadoSeleccionado.Add(venta);
                 }
             }
+        }
+
+        private void dataGridViewVentasEmpleado_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            idDoubleClickedRow = ObtenerIdFilaSeleccionadaVenta(e);
+
+            foreach (Venta venta in Comercio.ListaVentas)
+            {
+                if (venta.Id.ToString() == idDoubleClickedRow)
+                {
+                    ventaSeleccionada = venta;
+                    LlamarDetallesVentaEmpleadoForm();
+                    break;
+                }
+            }
+        }
+
+        private string ObtenerIdFilaSeleccionadaVenta(DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex == -1)
+            {
+                return "Click incorrecto";
+            }
+            else
+            {
+                return this.dataGridViewVentasEmpleado.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
+        }
+
+        private void LlamarDetallesVentaEmpleadoForm()
+        {
+            DetallesVentaEmpleadoForm detallesVentaEmpleadoForm = new DetallesVentaEmpleadoForm();
+            detallesVentaEmpleadoForm.ShowDialog();
         }
         #endregion
     }
