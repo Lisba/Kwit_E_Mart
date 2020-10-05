@@ -76,6 +76,12 @@
     <Compile Include="EditarProductoForm.Designer.cs">
       <DependentUpon>EditarProductoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmpleadosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmpleadosForm.Designer.cs">
+      <DependentUpon>EmpleadosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     <Compile Include="StockMenosDiezForm.Designer.cs">
       <DependentUpon>StockMenosDiezForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentasEmpleadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentasEmpleadoForm.Designer.cs">
+      <DependentUpon>VentasEmpleadoForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AltaClienteForm.resx">
       <DependentUpon>AltaClienteForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarProductoForm.resx">
       <DependentUpon>EditarProductoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmpleadosForm.resx">
+      <DependentUpon>EmpleadosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -137,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StockMenosDiezForm.resx">
       <DependentUpon>StockMenosDiezForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentasEmpleadoForm.resx">
+      <DependentUpon>VentasEmpleadoForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

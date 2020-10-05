@@ -64,7 +64,7 @@ namespace Entidades
             }
         }
 
-        public string Constrasenia
+        public string Contrasenia
         {
             get
             {

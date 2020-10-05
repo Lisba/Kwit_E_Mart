@@ -56,8 +56,6 @@ namespace Kwit_E_Mart
 
         private void HomeForm_MouseMove(object sender, MouseEventArgs e)
         {
-            // Local Coordinates: e.X / e.Y.
-            // Global Coordinates: Cursor.Position.X / Cursor.Position.Y.
             if (e.Y < 26)
             {
                 this.menuStripHome.Visible = true;
@@ -85,10 +83,12 @@ namespace Kwit_E_Mart
             Comercio.ListaProductos.Add(new Producto("Destorn. Estría", 70, 200.10));
             Comercio.ListaProductos.Add(new Producto("Destorn. Plano", 70, 200.10));
             Comercio.ListaProductos.Add(new Producto("Llave inglesa 3/4", 100, 150.00));
+            // Cargar 22 productos mas.
         }
 
         private void cargaInicialVentas()
         {
+            //Cargar 50 compras.
             //Comercio.AddnewSale(CarritoCompras.ListaProductosCarrito, CarritoCompras.GetPrecioTotal(), listaClientes[0], listaEmpleados[0]);
         }
 
@@ -211,10 +211,11 @@ namespace Kwit_E_Mart
             {
                 Comercio.ListaProductos.Add(altaProductoForm.Producto);
                 CargaDataGridProductos();
+                MessageBox.Show("Carga de datos exitosa!", "Carga Exitosa");
             }
             else
             {
-                MessageBox.Show("Ocurrio un error durante la carga de datos!");
+                MessageBox.Show("No se pudo concretar la carga de datos!", "Operación incompleta");
             }
         }
 
@@ -234,11 +235,11 @@ namespace Kwit_E_Mart
             if (buscarProductoForm.ShowDialog() == DialogResult.OK)
             {
                 CargaDataGridProductos();
-                MessageBox.Show("Modificacion de datos exitosa!");
+                MessageBox.Show("Modificacion de datos exitosa!", "Carga Exitosa");
             }
             else
             {
-                MessageBox.Show("Ocurrio un error durante la modificación de datos!");
+                MessageBox.Show("No se pudo concretar la modificación de datos!", "Operación incompleta");
             }
         }
 
@@ -262,21 +263,22 @@ namespace Kwit_E_Mart
                         CargarDataGridViewCarritoCompras();
                         CargaDataGridProductos();
                         RepodrucirSonidoDeCompra();
-                        MessageBox.Show("Gracias!! Vuelva Prontosss");
+                        MessageBox.Show("Gracias!! Vuelva Prontosss", "¡Gracias por su compra!");
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo concretar la compra!");
+                        MessageBox.Show("No se pudo concretar la compra!", "Operación incompleta");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Tu carrito está meando afuera del perol!");
+
+                    MessageBox.Show("¡Parece que te emocionaste demasiado!", "¡Saca productos del carrito!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Tu carrito esta vacío!");
+                MessageBox.Show("Tu carrito esta vacío!", "Carrito vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -289,7 +291,7 @@ namespace Kwit_E_Mart
             }
             catch (Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show(exception.Message, "Ocurrió un inconveniente");
             }
         }
 
@@ -303,5 +305,11 @@ namespace Kwit_E_Mart
             empleadoActual = empleado;
         }
         #endregion
+
+        private void porEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmpleadosForm empleadosForm = new EmpleadosForm();
+            empleadosForm.ShowDialog();
+        }
     }
 }

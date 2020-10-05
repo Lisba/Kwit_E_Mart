@@ -9,8 +9,8 @@ namespace Entidades
     public class Venta
     {
         #region Fields
-        static int id;
-        int idGlobal;
+        static int idGlobal;
+        int id;
         List<Producto> listaProductosVenta;
         double precioTotal;
         Cliente cliente;
@@ -71,12 +71,12 @@ namespace Entidades
         #region Constructors
         static Venta()
         {
-            id = 1;
+            idGlobal = 1;
         }
 
         public Venta(List<Producto> listaProductosVenta, double precioTotal, Cliente cliente, Empleado empleado)
         {
-            idGlobal = id++;
+            id = idGlobal++;
             this.listaProductosVenta = listaProductosVenta;
             this.precioTotal = precioTotal;
             this.cliente = cliente;
@@ -84,6 +84,5 @@ namespace Entidades
             this.date = DateTime.Now;
         }
         #endregion
-
     }
 }

@@ -29,7 +29,7 @@ namespace Kwit_E_Mart
                 {
                     findValue = true;
                     
-                    if(this.txtContrasenia.Text.ToString() == empleado.Constrasenia)
+                    if(this.txtContrasenia.Text.ToString() == empleado.Contrasenia)
                     {
                         HomeForm homeForm = new HomeForm();
                         homeForm.lblEmpleadoHome.Text = empleado.SayNameLastname(empleado.Nombre, empleado.Apellido);

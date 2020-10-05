@@ -121,6 +121,12 @@ namespace Entidades
             return returnValue;
         }
 
+        /// <summary>
+        /// Valida si el producto posee disponible la cantidad deseada a comprar.
+        /// </summary>
+        /// <param name="producto"></param>
+        /// <param name="cantidadDeseada"></param>
+        /// <returns>True o False si posee o no la cantidad deseada a comprar.</returns>
         public static bool StockDisponibleDeProducto(Producto producto, int cantidadDeseada)
         {
             bool returnValue = true;
@@ -133,24 +139,31 @@ namespace Entidades
             return returnValue;
         }
 
+        /// <summary>
+        /// Valida si la cantidad de productos requeridos en el carrito de compras existe disponible en el comercio.
+        /// </summary>
+        /// <returns>True o False si hay stock suficiente para efectuar la compra.</returns>
         public static bool StockDisponibleParaComprar()
         {
             bool returnValue = true;
-            int count = 0;
+            int count;
 
             foreach (Producto productoEnCarrito in CarritoCompras.ListaProductosCarrito)
             {
-                foreach (Producto productoRepetidoEnCarrito in CarritoCompras.ListaProductosCarrito)
+                count = 0;
+
+                for (int i = 0; i < CarritoCompras.ListaProductosCarrito.Count; i++)
                 {
-                    if(productoEnCarrito.Id == productoRepetidoEnCarrito.Id)
+                    if (productoEnCarrito.Id == CarritoCompras.ListaProductosCarrito[i].Id)
                     {
                         count++;
                     }
                 }
-                
-                if(count > productoEnCarrito.Cantidad)
+
+                if (count > productoEnCarrito.Cantidad)
                 {
                     returnValue = false;
+                    break;
                 }
             }
 

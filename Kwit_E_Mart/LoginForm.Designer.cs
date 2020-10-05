@@ -43,7 +43,7 @@
             this.btnLogin.Location = new System.Drawing.Point(180, 201);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(153, 41);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "LOGIN";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -77,7 +77,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(250, 59);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(229, 29);
-            this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.TabIndex = 0;
             // 
             // txtContrasenia
             // 
@@ -86,7 +86,7 @@
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.PasswordChar = '*';
             this.txtContrasenia.Size = new System.Drawing.Size(229, 32);
-            this.txtContrasenia.TabIndex = 4;
+            this.txtContrasenia.TabIndex = 1;
             // 
             // LoginForm
             // 
