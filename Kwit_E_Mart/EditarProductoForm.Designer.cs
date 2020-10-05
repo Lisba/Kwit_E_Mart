@@ -134,7 +134,7 @@
             this.MinimizeBox = false;
             this.Name = "EditarProductoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EditarProductoForm";
+            this.Text = "Ingresa los nuevos datos";
             this.Load += new System.EventHandler(this.EditarProductoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

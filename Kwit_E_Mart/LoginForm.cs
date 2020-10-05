@@ -33,6 +33,7 @@ namespace Kwit_E_Mart
                     {
                         HomeForm homeForm = new HomeForm();
                         homeForm.lblEmpleadoHome.Text = empleado.SayNameLastname(empleado.Nombre, empleado.Apellido);
+                        homeForm.SetEmpleadoSesionActual(empleado);
                         homeForm.ShowDialog();
                         break;
                     }

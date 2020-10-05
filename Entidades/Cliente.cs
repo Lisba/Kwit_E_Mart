@@ -10,14 +10,15 @@ namespace Entidades
     {
         #region Fields
         string email;
+        int idPropio;
         #endregion
 
         #region Properties
-        public int Id
+        public int IdPropio
         {
             get
             {
-                return id;
+                return idPropio;
             }
         }
 
@@ -57,7 +58,7 @@ namespace Entidades
         #region Constructors
         public Cliente(string nombre, string apellido, int dni, string email) : base(nombre, apellido, dni)
         {
-            id++;
+            this.idPropio = id++;
             this.email = email;
         }
         #endregion

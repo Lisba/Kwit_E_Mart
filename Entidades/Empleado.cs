@@ -9,17 +9,18 @@ namespace Entidades
     public class Empleado : Persona
     {
         #region Fields
+        int idPropio;
         ECargos cargo;
         string usuario;
         string contrasenia;
         #endregion
 
         #region Properties
-        public int Id
+        public int IdPropio
         {
             get
             {
-                return id;
+                return idPropio;
             }
         }
 
@@ -73,14 +74,9 @@ namespace Entidades
         #endregion
 
         #region Constructors
-        static Empleado()
-        {
-            id = 0;
-        }
-
         public Empleado(string nombre, string apellido, int dni, ECargos cargo, string usuario, string contrasenia) : base(nombre, apellido, dni)
         {
-            id++;
+            this.idPropio = id++;
             this.cargo = cargo;
             this.usuario = usuario;
             this.contrasenia = contrasenia;

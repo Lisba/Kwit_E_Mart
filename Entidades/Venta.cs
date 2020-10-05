@@ -10,6 +10,7 @@ namespace Entidades
     {
         #region Fields
         static int id;
+        int idGlobal;
         List<Producto> listaProductosVenta;
         double precioTotal;
         Cliente cliente;
@@ -70,12 +71,12 @@ namespace Entidades
         #region Constructors
         static Venta()
         {
-            id = 0;
+            id = 1;
         }
 
         public Venta(List<Producto> listaProductosVenta, double precioTotal, Cliente cliente, Empleado empleado)
         {
-            id++;
+            idGlobal = id++;
             this.listaProductosVenta = listaProductosVenta;
             this.precioTotal = precioTotal;
             this.cliente = cliente;

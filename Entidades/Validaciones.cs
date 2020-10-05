@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 
 namespace Entidades
 {
@@ -97,6 +99,59 @@ namespace Entidades
             if (Regex.IsMatch(strValue, regex))
             {
                 returnValue = true;
+            }
+
+            return returnValue;
+        }
+
+        /// <summary>
+        /// Valida si el cliente recibido por parametros se apellida Simpson.
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns>True o false si el cliente se apellida Simpson.</returns>
+        public static bool ValidarClienteSimpson(Cliente cliente)
+        {
+            bool returnValue = false;
+
+            if (cliente.Apellido.ToUpper() == "SIMPSON")
+            {
+                returnValue = true;
+            }
+
+            return returnValue;
+        }
+
+        public static bool StockDisponibleDeProducto(Producto producto, int cantidadDeseada)
+        {
+            bool returnValue = true;
+
+            if(cantidadDeseada > producto.Cantidad)
+            {
+                returnValue = false;
+            }
+
+            return returnValue;
+        }
+
+        public static bool StockDisponibleParaComprar()
+        {
+            bool returnValue = true;
+            int count = 0;
+
+            foreach (Producto productoEnCarrito in CarritoCompras.ListaProductosCarrito)
+            {
+                foreach (Producto productoRepetidoEnCarrito in CarritoCompras.ListaProductosCarrito)
+                {
+                    if(productoEnCarrito.Id == productoRepetidoEnCarrito.Id)
+                    {
+                        count++;
+                    }
+                }
+                
+                if(count > productoEnCarrito.Cantidad)
+                {
+                    returnValue = false;
+                }
             }
 
             return returnValue;

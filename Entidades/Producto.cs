@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -79,6 +80,14 @@ namespace Entidades
         public void SetPrecioProducto(double precioUnidad)
         {
             this.precioUnidad = precioUnidad;
+        }
+
+        public static void RestarStockAProducto()
+        {
+            foreach (Producto producto in CarritoCompras.ListaProductosCarrito)
+            {
+                producto.cantidad--;
+            }
         }
         #endregion
     }

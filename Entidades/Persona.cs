@@ -18,7 +18,7 @@ namespace Entidades
         #region Constructors
         static Persona()
         {
-            id = 0;
+            id = 1;
         }
 
         public Persona(string nombre, string apellido, int dni)
@@ -32,16 +32,8 @@ namespace Entidades
         #region Methods
         public virtual string SayNameLastname(string name, string lastName)
         {
-            return $"{name} {lastName}";
-        }
-
-        public virtual string sayPersonData(int id, string name, string lastName, int dni)
-        {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(id.ToString());
-            sb.AppendLine(name);
-            sb.AppendLine(lastName);
-            sb.AppendLine(dni.ToString());
+            sb.AppendLine($"{name} {lastName}");
             return sb.ToString();
         }
         #endregion

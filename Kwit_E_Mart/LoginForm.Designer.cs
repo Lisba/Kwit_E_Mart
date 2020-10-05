@@ -104,7 +104,7 @@
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hola! Cuéntame de tus credenciales!";
+            this.Text = "¡Hola! ¡Cuéntame sobre tus credenciales!";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

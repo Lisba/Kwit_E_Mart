@@ -17,6 +17,7 @@ namespace Kwit_E_Mart
         Producto producto;
         #endregion
 
+        #region Properties
         public Producto Producto
         {
             get
@@ -24,12 +25,16 @@ namespace Kwit_E_Mart
                 return producto;
             }
         }
+        #endregion
 
+        #region Constructors
         public EditarProductoForm()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Methods
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
             if (Validaciones.ValidarString(txtEditarNombreProducto.Text) && Validaciones.ValidarInt(txtEditarCantidadProducto.Text) != -1 && Validaciones.ValidarDouble(txtEditarPrecioProducto.Text) != -1)
@@ -45,11 +50,17 @@ namespace Kwit_E_Mart
 
         private void EditarProductoForm_Load(object sender, EventArgs e)
         {
-            Producto producto = Comercio.ListaProductos.Find(item => item.Id == BuscarProductoForm.Id);
-
+            producto = BuscarProductoAEditar();
             txtEditarNombreProducto.Text = producto.Nombre;
             txtEditarCantidadProducto.Text = producto.Cantidad.ToString();
             txtEditarPrecioProducto.Text = producto.PrecioUnidad.ToString();
         }
+
+        public Producto BuscarProductoAEditar()
+        {
+            Producto producto = Comercio.ListaProductos.Find(item => item.Id == BuscarProductoForm.Id);
+            return producto;
+        }
+        #endregion
     }
 }

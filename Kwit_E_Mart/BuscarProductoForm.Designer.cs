@@ -90,7 +90,7 @@
             this.MaximizeBox = false;
             this.Name = "BuscarProductoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BuscarProductoForm";
+            this.Text = "Ingresa el ID del Producto";
             this.ResumeLayout(false);
             this.PerformLayout();
 

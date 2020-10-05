@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,15 +19,29 @@ namespace Kwit_E_Mart
         List<Empleado> listaEmpleados;
         List<Cliente> listaClientes;
         string idDoubleClickedRow;
+        static Empleado empleadoActual;
         #endregion
 
+        #region Properties
+        public static Empleado EmpleadoActual
+        {
+            get
+            {
+                return empleadoActual;
+            }
+        }
+        #endregion
+
+        #region Constructor
         public HomeForm()
         {
             InitializeComponent();
             listaEmpleados = new List<Empleado>();
             listaClientes = new List<Cliente>();
         }
+        #endregion
 
+        #region Methods
         private void HomeForm_Load(object sender, EventArgs e)
         {
             listaEmpleados = Comercio.GetListaDeEmpleados();
@@ -85,17 +100,28 @@ namespace Kwit_E_Mart
         private void dataGridViewProductos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             idDoubleClickedRow = ObtenerIdFilaSeleccionadaProductos(e);
-            CargarProductoACarritoCompras();
+            CargarProductoACarritoCompras(1);
         }
 
-        private void CargarProductoACarritoCompras()
+        private void CargarProductoACarritoCompras(int cantidadDeseada)
         {
             foreach (Producto producto in Comercio.ListaProductos)
             {
-                if(producto.Id.ToString() == idDoubleClickedRow)
+                if (producto.Id.ToString() == idDoubleClickedRow)
                 {
-                    CarritoCompras.AddNewItemToShopCar(producto);
-                    CargarDataGridViewCarritoCompras();
+                    if (Validaciones.StockDisponibleDeProducto(producto, cantidadDeseada))
+                    {
+                        for (int i = 0; i < cantidadDeseada; i++)
+                        {
+                            CarritoCompras.ListaProductosCarrito.Add(producto);
+                        }
+
+                        CargarDataGridViewCarritoCompras();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Stock insuficiente!", "Insuficiente");
+                    }
                     break;
                 }
             }
@@ -105,6 +131,8 @@ namespace Kwit_E_Mart
         {
             this.dataGridViewCarrito.DataSource = null;
             this.dataGridViewCarrito.DataSource = CarritoCompras.ListaProductosCarrito;
+            this.dataGridViewCarrito.Columns["Id"].Visible = false;
+            this.dataGridViewCarrito.Columns["Cantidad"].Visible = false;
             this.lblSubTotalCifraHome.Text = CarritoCompras.GetPrecioSubTotal().ToString();
         }
 
@@ -115,19 +143,17 @@ namespace Kwit_E_Mart
 
         private void btbAgregarAlCarro_Click(object sender, EventArgs e)
         {
-            foreach (Producto producto in Comercio.ListaProductos)
-            {
-                if (producto.Id.ToString() == idDoubleClickedRow)
-                {
-                    for(int i=0; i < int.Parse(txtCantidadHome.Text); i++)
-                    {
-                        CarritoCompras.AddNewItemToShopCar(producto);
-                    }
+            int cantidadDeseada = Validaciones.ValidarInt(txtCantidadHome.Text);
 
-                    CargarDataGridViewCarritoCompras();
-                    break;
-                }
+            if(cantidadDeseada > 0)
+            {
+                CargarProductoACarritoCompras(cantidadDeseada);
             }
+            else
+            {
+                MessageBox.Show("Ingrese un número válido!", "¡Valor Inválido!");
+            }
+
         }
 
         private void btnResetCar_Click(object sender, EventArgs e)
@@ -221,5 +247,61 @@ namespace Kwit_E_Mart
             StockMenosDiezForm stockMenosDiezForm = new StockMenosDiezForm();
             stockMenosDiezForm.ShowDialog();
         }
+
+        private void btnComprarHome_Click(object sender, EventArgs e)
+        {
+            if(CarritoCompras.ListaProductosCarrito.Count > 0)
+            {
+                if (Validaciones.StockDisponibleParaComprar())
+                {
+                    SeleccionarClienteForm seleccionarClienteForm = new SeleccionarClienteForm();
+
+                    if(seleccionarClienteForm.ShowDialog() == DialogResult.OK)
+                    {
+                        CarritoCompras.RemoveAllItemsFromShopCar();
+                        CargarDataGridViewCarritoCompras();
+                        CargaDataGridProductos();
+                        RepodrucirSonidoDeCompra();
+                        MessageBox.Show("Gracias!! Vuelva Prontosss");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo concretar la compra!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tu carrito está meando afuera del perol!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tu carrito esta vacío!");
+            }
+        }
+
+        private void RepodrucirSonidoDeCompra()
+        {
+            try
+            {
+                SoundPlayer sellSound = new SoundPlayer(GetSongPath());
+                sellSound.Play();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private string GetSongPath()
+        {
+            return System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "rockGuitar.wav");
+        }
+
+        public void SetEmpleadoSesionActual(Empleado empleado)
+        {
+            empleadoActual = empleado;
+        }
+        #endregion
     }
 }

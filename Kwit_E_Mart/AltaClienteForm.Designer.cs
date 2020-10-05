@@ -52,14 +52,14 @@
             this.txtDniCliente.Location = new System.Drawing.Point(135, 142);
             this.txtDniCliente.Name = "txtDniCliente";
             this.txtDniCliente.Size = new System.Drawing.Size(201, 20);
-            this.txtDniCliente.TabIndex = 1;
+            this.txtDniCliente.TabIndex = 2;
             // 
             // txtApellidoCliente
             // 
             this.txtApellidoCliente.Location = new System.Drawing.Point(135, 104);
             this.txtApellidoCliente.Name = "txtApellidoCliente";
             this.txtApellidoCliente.Size = new System.Drawing.Size(201, 20);
-            this.txtApellidoCliente.TabIndex = 2;
+            this.txtApellidoCliente.TabIndex = 1;
             // 
             // txtEmailCliente
             // 
@@ -120,9 +120,10 @@
             this.btnAltaCliente.Location = new System.Drawing.Point(100, 240);
             this.btnAltaCliente.Name = "btnAltaCliente";
             this.btnAltaCliente.Size = new System.Drawing.Size(156, 39);
-            this.btnAltaCliente.TabIndex = 8;
+            this.btnAltaCliente.TabIndex = 4;
             this.btnAltaCliente.Text = "Agregar Cliente";
             this.btnAltaCliente.UseVisualStyleBackColor = false;
+            this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
             // 
             // lblTituloAltaCliente
             // 
