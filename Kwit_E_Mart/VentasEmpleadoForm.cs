@@ -47,20 +47,14 @@ namespace Kwit_E_Mart
         {
             this.dataGridViewVentasEmpleado.DataSource = null;
             CargarVentasDeEmpleadoSeleccionado();
-            this.dataGridViewVentasEmpleado.DataSource = listaVentasEmpleadoSeleccionado;
+            this.dataGridViewVentasEmpleado.DataSource = CargarVentasDeEmpleadoSeleccionado();
             this.dataGridViewVentasEmpleado.Columns["Cliente"].Visible = false;
             this.dataGridViewVentasEmpleado.Columns["Empleado"].Visible = false;
         }
 
-        private void CargarVentasDeEmpleadoSeleccionado()
+        private List<Venta> CargarVentasDeEmpleadoSeleccionado()
         {
-            foreach (Venta venta in Comercio.ListaVentas)
-            {
-                if(venta.Empleado.IdPropio == EmpleadosForm.EmpleadoSeleccionado.IdPropio)
-                {
-                    listaVentasEmpleadoSeleccionado.Add(venta);
-                }
-            }
+            return Comercio.GetListaVentasEmpleado(EmpleadosForm.EmpleadoSeleccionado);
         }
 
         private void dataGridViewVentasEmpleado_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

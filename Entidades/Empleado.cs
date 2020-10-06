@@ -82,5 +82,14 @@ namespace Entidades
             this.contrasenia = contrasenia;
         }
         #endregion
+
+        #region Methods
+        public override string SayNameLastname(string name, string lastName)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Empleado: {name} {lastName}");
+            return sb.ToString();
+        }
+        #endregion
     }
 }

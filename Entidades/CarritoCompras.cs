@@ -50,6 +50,18 @@ namespace Entidades
             return subTotal;
         }
 
+        public static double GetPrecioSubTotal(List<Producto> listaProductosCarrito)
+        {
+            double subTotal = 0;
+
+            foreach (Producto producto in listaProductosCarrito)
+            {
+                subTotal += producto.PrecioUnidad;
+            }
+
+            return subTotal;
+        }
+
         public static double GetDescuento(double subTotal, Cliente cliente)
         {
             double returnValue = 0;

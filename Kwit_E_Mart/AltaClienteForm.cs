@@ -37,14 +37,29 @@ namespace Kwit_E_Mart
         #region Methods
         private void btnAltaCliente_Click(object sender, EventArgs e)
         {
-            if (Validaciones.ValidarString(txtNombreCliente.Text) && Validaciones.ValidarString(txtApellidoCliente.Text) && Validaciones.ValidarInt(txtDniCliente.Text) != -1 && Validaciones.ValidarEmail(txtEmailCliente.Text))
+            if (txtEmailCliente.Text == "")
             {
-                cliente = new Cliente(this.txtNombreCliente.Text, this.txtApellidoCliente.Text, Validaciones.ValidarInt(txtDniCliente.Text), txtEmailCliente.Text);
-                this.DialogResult = DialogResult.OK;
+                if(Validaciones.ValidarString(txtNombreCliente.Text) && Validaciones.ValidarString(txtApellidoCliente.Text) && Validaciones.ValidarInt(txtDniCliente.Text) != -1)
+                {
+                    cliente = new Cliente(this.txtNombreCliente.Text, this.txtApellidoCliente.Text, Validaciones.ValidarInt(txtDniCliente.Text));
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.No;
+                }
             }
             else
             {
-                this.DialogResult = DialogResult.No;
+                if (Validaciones.ValidarString(txtNombreCliente.Text) && Validaciones.ValidarString(txtApellidoCliente.Text) && Validaciones.ValidarInt(txtDniCliente.Text) != -1 && Validaciones.ValidarEmail(txtEmailCliente.Text))
+                {
+                    cliente = new Cliente(this.txtNombreCliente.Text, this.txtApellidoCliente.Text, Validaciones.ValidarInt(txtDniCliente.Text), txtEmailCliente.Text);
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.No;
+                }
             }
         }
         #endregion

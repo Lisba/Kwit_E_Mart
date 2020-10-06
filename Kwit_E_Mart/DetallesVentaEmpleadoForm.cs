@@ -22,6 +22,9 @@ namespace Kwit_E_Mart
         {
             this.dataGridViewDetalleCompra.DataSource = null;
             this.dataGridViewDetalleCompra.DataSource = VentasEmpleadoForm.VentaSeleccionada.ListaProductosVenta;
+            this.dataGridViewDetalleCompra.Columns["Id"].Visible = false;
+            this.dataGridViewDetalleCompra.Columns["Cantidad"].Visible = false;
+            this.lblFechaHoraVenta.Text = VentasEmpleadoForm.VentaSeleccionada.Date.ToString();
             this.lblPrecioTotalCompraDetalles.Text = VentasEmpleadoForm.VentaSeleccionada.PrecioTotal.ToString();
             this.lblClienteDetalleCompra.Text = VentasEmpleadoForm.VentaSeleccionada.Cliente.SayNameLastname(VentasEmpleadoForm.VentaSeleccionada.Cliente.Nombre, VentasEmpleadoForm.VentaSeleccionada.Cliente.Apellido);
             this.lblEmpleadoDetalleCompra.Text = VentasEmpleadoForm.VentaSeleccionada.Empleado.SayNameLastname(VentasEmpleadoForm.VentaSeleccionada.Empleado.Nombre, VentasEmpleadoForm.VentaSeleccionada.Empleado.Apellido);

@@ -61,6 +61,21 @@ namespace Entidades
             this.idPropio = id++;
             this.email = email;
         }
+
+        public Cliente(string nombre, string apellido, int dni) : base(nombre, apellido, dni)
+        {
+            this.idPropio = id++;
+            this.email = string.Empty;
+        }
+        #endregion
+
+        #region Methods
+        public override string SayNameLastname(string name, string lastName)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Cliente: {name} {lastName}");
+            return sb.ToString();
+        }
         #endregion
     }
 }

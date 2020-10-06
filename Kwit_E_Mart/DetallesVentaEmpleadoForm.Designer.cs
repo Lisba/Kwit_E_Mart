@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPrecioTotalCompraDetalles = new System.Windows.Forms.Label();
             this.lblEmpleadoDetalleCompra = new System.Windows.Forms.Label();
             this.lblClienteDetalleCompra = new System.Windows.Forms.Label();
             this.dataGridViewDetalleCompra = new System.Windows.Forms.DataGridView();
-            this.lblEmpleadoCompra = new System.Windows.Forms.Label();
-            this.lblClienteCompra = new System.Windows.Forms.Label();
             this.lblPrecioTotalCompra = new System.Windows.Forms.Label();
             this.lblTituloDetallesCompra = new System.Windows.Forms.Label();
+            this.lblFechaHoraVenta = new System.Windows.Forms.Label();
+            this.lblHoraVentaTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetalleCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             this.lblPrecioTotalCompraDetalles.AutoSize = true;
             this.lblPrecioTotalCompraDetalles.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecioTotalCompraDetalles.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPrecioTotalCompraDetalles.Location = new System.Drawing.Point(174, 256);
+            this.lblPrecioTotalCompraDetalles.Location = new System.Drawing.Point(155, 240);
             this.lblPrecioTotalCompraDetalles.Name = "lblPrecioTotalCompraDetalles";
             this.lblPrecioTotalCompraDetalles.Size = new System.Drawing.Size(47, 19);
             this.lblPrecioTotalCompraDetalles.TabIndex = 38;
@@ -57,7 +57,7 @@
             this.lblEmpleadoDetalleCompra.AutoSize = true;
             this.lblEmpleadoDetalleCompra.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpleadoDetalleCompra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEmpleadoDetalleCompra.Location = new System.Drawing.Point(454, 239);
+            this.lblEmpleadoDetalleCompra.Location = new System.Drawing.Point(375, 240);
             this.lblEmpleadoDetalleCompra.Name = "lblEmpleadoDetalleCompra";
             this.lblEmpleadoDetalleCompra.Size = new System.Drawing.Size(145, 19);
             this.lblEmpleadoDetalleCompra.TabIndex = 37;
@@ -68,7 +68,7 @@
             this.lblClienteDetalleCompra.AutoSize = true;
             this.lblClienteDetalleCompra.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClienteDetalleCompra.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblClienteDetalleCompra.Location = new System.Drawing.Point(454, 271);
+            this.lblClienteDetalleCompra.Location = new System.Drawing.Point(375, 271);
             this.lblClienteDetalleCompra.Name = "lblClienteDetalleCompra";
             this.lblClienteDetalleCompra.Size = new System.Drawing.Size(145, 19);
             this.lblClienteDetalleCompra.TabIndex = 36;
@@ -81,24 +81,24 @@
             this.dataGridViewDetalleCompra.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.dataGridViewDetalleCompra.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewDetalleCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewDetalleCompra.ColumnHeadersHeight = 30;
             this.dataGridViewDetalleCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOrange;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDetalleCompra.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkOrange;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDetalleCompra.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewDetalleCompra.EnableHeadersVisualStyles = false;
             this.dataGridViewDetalleCompra.Location = new System.Drawing.Point(127, 31);
             this.dataGridViewDetalleCompra.Name = "dataGridViewDetalleCompra";
@@ -108,34 +108,12 @@
             this.dataGridViewDetalleCompra.Size = new System.Drawing.Size(425, 190);
             this.dataGridViewDetalleCompra.TabIndex = 35;
             // 
-            // lblEmpleadoCompra
-            // 
-            this.lblEmpleadoCompra.AutoSize = true;
-            this.lblEmpleadoCompra.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleadoCompra.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblEmpleadoCompra.Location = new System.Drawing.Point(361, 239);
-            this.lblEmpleadoCompra.Name = "lblEmpleadoCompra";
-            this.lblEmpleadoCompra.Size = new System.Drawing.Size(87, 19);
-            this.lblEmpleadoCompra.TabIndex = 34;
-            this.lblEmpleadoCompra.Text = "Vendedor";
-            // 
-            // lblClienteCompra
-            // 
-            this.lblClienteCompra.AutoSize = true;
-            this.lblClienteCompra.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteCompra.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblClienteCompra.Location = new System.Drawing.Point(361, 271);
-            this.lblClienteCompra.Name = "lblClienteCompra";
-            this.lblClienteCompra.Size = new System.Drawing.Size(68, 19);
-            this.lblClienteCompra.TabIndex = 33;
-            this.lblClienteCompra.Text = "Cliente";
-            // 
             // lblPrecioTotalCompra
             // 
             this.lblPrecioTotalCompra.AutoSize = true;
             this.lblPrecioTotalCompra.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecioTotalCompra.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblPrecioTotalCompra.Location = new System.Drawing.Point(59, 256);
+            this.lblPrecioTotalCompra.Location = new System.Drawing.Point(40, 240);
             this.lblPrecioTotalCompra.Name = "lblPrecioTotalCompra";
             this.lblPrecioTotalCompra.Size = new System.Drawing.Size(113, 19);
             this.lblPrecioTotalCompra.TabIndex = 32;
@@ -152,18 +130,40 @@
             this.lblTituloDetallesCompra.TabIndex = 31;
             this.lblTituloDetallesCompra.Text = "Detalles de Compra";
             // 
+            // lblFechaHoraVenta
+            // 
+            this.lblFechaHoraVenta.AutoSize = true;
+            this.lblFechaHoraVenta.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHoraVenta.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblFechaHoraVenta.Location = new System.Drawing.Point(155, 269);
+            this.lblFechaHoraVenta.Name = "lblFechaHoraVenta";
+            this.lblFechaHoraVenta.Size = new System.Drawing.Size(62, 19);
+            this.lblFechaHoraVenta.TabIndex = 40;
+            this.lblFechaHoraVenta.Text = "0/0/0";
+            // 
+            // lblHoraVentaTitulo
+            // 
+            this.lblHoraVentaTitulo.AutoSize = true;
+            this.lblHoraVentaTitulo.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoraVentaTitulo.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblHoraVentaTitulo.Location = new System.Drawing.Point(40, 269);
+            this.lblHoraVentaTitulo.Name = "lblHoraVentaTitulo";
+            this.lblHoraVentaTitulo.Size = new System.Drawing.Size(117, 19);
+            this.lblHoraVentaTitulo.TabIndex = 39;
+            this.lblHoraVentaTitulo.Text = "Fecha y Hora";
+            // 
             // DetallesVentaEmpleadoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(693, 326);
+            this.Controls.Add(this.lblFechaHoraVenta);
+            this.Controls.Add(this.lblHoraVentaTitulo);
             this.Controls.Add(this.lblPrecioTotalCompraDetalles);
             this.Controls.Add(this.lblEmpleadoDetalleCompra);
             this.Controls.Add(this.lblClienteDetalleCompra);
             this.Controls.Add(this.dataGridViewDetalleCompra);
-            this.Controls.Add(this.lblEmpleadoCompra);
-            this.Controls.Add(this.lblClienteCompra);
             this.Controls.Add(this.lblPrecioTotalCompra);
             this.Controls.Add(this.lblTituloDetallesCompra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -183,9 +183,9 @@
         private System.Windows.Forms.Label lblEmpleadoDetalleCompra;
         private System.Windows.Forms.Label lblClienteDetalleCompra;
         private System.Windows.Forms.DataGridView dataGridViewDetalleCompra;
-        private System.Windows.Forms.Label lblEmpleadoCompra;
-        private System.Windows.Forms.Label lblClienteCompra;
         private System.Windows.Forms.Label lblPrecioTotalCompra;
         private System.Windows.Forms.Label lblTituloDetallesCompra;
+        private System.Windows.Forms.Label lblFechaHoraVenta;
+        private System.Windows.Forms.Label lblHoraVentaTitulo;
     }
 }

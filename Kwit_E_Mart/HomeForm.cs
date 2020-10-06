@@ -42,18 +42,31 @@ namespace Kwit_E_Mart
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Carga las listas con los datos del comercio al cargar el form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HomeForm_Load(object sender, EventArgs e)
         {
             listaEmpleados = Comercio.GetListaDeEmpleados();
             listaClientes = Comercio.GetListaDeClientes();
         }
 
+        /// <summary>
+        /// Carga el DataGridView de productos (Setea null para refrescar).
+        /// </summary>
         private void CargaDataGridProductos()
         {
             this.dataGridViewProductos.DataSource = null;
             this.dataGridViewProductos.DataSource = Comercio.ListaProductos;
         }
 
+        /// <summary>
+        /// Detecta la posicion del mouse y hace visible o invisible el menu superior.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HomeForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Y < 26)
@@ -66,43 +79,137 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Carga 4 clientes para test.
+        /// </summary>
         private void CargaInicialClientes()
         {
-            Comercio.ListaPersonas.Add(new Cliente("Luis", "Garcia", 23456789, "luisgarcia10@gmail.com"));
+            Comercio.ListaPersonas.Add(new Cliente("Luis", "Moreira", 23456789, "luisgarcia10@gmail.com"));
             Comercio.ListaPersonas.Add(new Cliente("Homero", "Simpson", 23425584, "homerosimpson@hotmail.com"));
             Comercio.ListaPersonas.Add(new Cliente("Bart", "Simpson", 23425584, "homerosimpson@hotmail.com"));
+            Comercio.ListaPersonas.Add(new Cliente("Javier", "Barroso", 93423484));
+            Comercio.ListaPersonas.Add(new Cliente("Keimarly", "Cisnero", 82523484));
+            Comercio.ListaPersonas.Add(new Cliente("Ketty", "Leon", 78423484));
         }
 
+        /// <summary>
+        /// Carga 20 productos al comercio.
+        /// </summary>
         private void CargaInicialProductos()
         {
             Comercio.ListaProductos.Add(new Producto("Candado", 9, 70.3));
             Comercio.ListaProductos.Add(new Producto("Martillo", 20, 500.50));
-            Comercio.ListaProductos.Add(new Producto("Clavos peq", 300, 30.50));
-            Comercio.ListaProductos.Add(new Producto("Clavos grand", 200, 50.20));
+            Comercio.ListaProductos.Add(new Producto("Clavo P.", 300, 30.50));
+            Comercio.ListaProductos.Add(new Producto("Clavo G.", 200, 50.20));
             Comercio.ListaProductos.Add(new Producto("Taladro", 30, 1000.80));
             Comercio.ListaProductos.Add(new Producto("Destorn. Estría", 70, 200.10));
             Comercio.ListaProductos.Add(new Producto("Destorn. Plano", 70, 200.10));
-            Comercio.ListaProductos.Add(new Producto("Llave inglesa 3/4", 100, 150.00));
-            // Cargar 22 productos mas.
+            Comercio.ListaProductos.Add(new Producto("Llave Ing. 3/4", 100, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Ing. 2/4", 100, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Ing. 1/4", 100, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Manguera Roja", 200, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera Verde", 200, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera Azul", 200, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera P.", 200, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera M.", 200, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera G.", 150, 80.20));
+            Comercio.ListaProductos.Add(new Producto("Llave Cruz", 50, 500.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Fra. 1/4", 100, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Fra. 2/4", 100, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Fra. 3/4", 100, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Fra. 4/4", 100, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Ing. 4/4", 100, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo G.", 500, 40.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo M.", 500, 30.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo P.", 500, 20.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo Estria", 200, 50.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo Plano", 200, 50.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo Estrella", 9, 40.00));
+            Comercio.ListaProductos.Add(new Producto("Juego de tornillos", 80, 1100.00));
+            Comercio.ListaProductos.Add(new Producto("Juego de Destorn.", 5, 1500.00));
         }
 
+        /// <summary>
+        /// Carga 50 compras al comercio.
+        /// </summary>
         private void cargaInicialVentas()
         {
-            //Cargar 50 compras.
-            //Comercio.AddnewSale(CarritoCompras.ListaProductosCarrito, CarritoCompras.GetPrecioTotal(), listaClientes[0], listaEmpleados[0]);
+            List<Producto> listaDeProductos;
+
+            for (int i=1; i<15; i++)
+            {
+                listaDeProductos = CargarListaDeProductos(i);
+                Comercio.ListaVentas.Add(new Venta(listaDeProductos, Math.Round(CarritoCompras.GetPrecioSubTotal(listaDeProductos), 2), Comercio.GetListaDeClientes()[0], Comercio.GetListaDeEmpleados()[1]));
+            }
+
+            for (int i = 1; i < 15; i++)
+            {
+                listaDeProductos = CargarListaDeProductos(i);
+                Comercio.ListaVentas.Add(new Venta(CargarListaDeProductos(i), Math.Round(CarritoCompras.GetPrecioSubTotal(listaDeProductos), 2), Comercio.GetListaDeClientes()[5], Comercio.GetListaDeEmpleados()[0]));
+            }
+
+            for (int i = 1; i < 10; i++)
+            {
+                listaDeProductos = CargarListaDeProductos(i);
+                Comercio.ListaVentas.Add(new Venta(CargarListaDeProductos(i), Math.Round(CarritoCompras.GetPrecioSubTotal(listaDeProductos), 2), Comercio.GetListaDeClientes()[4], Comercio.GetListaDeEmpleados()[1]));
+            }
+
+            for (int i = 1; i < 10; i++)
+            {
+                listaDeProductos = CargarListaDeProductos(i);
+                Comercio.ListaVentas.Add(new Venta(CargarListaDeProductos(i), Math.Round(CarritoCompras.GetPrecioSubTotal(listaDeProductos), 2), Comercio.GetListaDeClientes()[3], Comercio.GetListaDeEmpleados()[0]));
+            }
         }
 
+        /// <summary>
+        /// Carga listas de productos para la carga de 50 ventas.
+        /// </summary>
+        /// <param name="cantidadDeProductos"></param>
+        /// <returns></returns>
+        private List<Producto> CargarListaDeProductos(int cantidadDeProductos)
+        {
+            List<Producto> listaDeProductos = new List<Producto>();
+
+            if(cantidadDeProductos < 30)
+            {
+                for(int i=0; i < cantidadDeProductos; i++)
+                {
+                    listaDeProductos.Add(Comercio.ListaProductos[i]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Operación no permitida!", "Operacion bloqueada");
+            }
+
+            return listaDeProductos;
+        }
+
+        /// <summary>
+        /// Cierra toda la app al cerrar el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HomeForm_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Obtiene la fila seleccionada al hacer doble click y llama al metodo para cargar dicho producto al carrito de compras.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewProductos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             idDoubleClickedRow = ObtenerIdFilaSeleccionadaProductos(e);
             CargarProductoACarritoCompras(1);
         }
 
+        /// <summary>
+        /// Carga el producto al carrito de compras segun la cantidad deseada.
+        /// </summary>
+        /// <param name="cantidadDeseada"></param>
         private void CargarProductoACarritoCompras(int cantidadDeseada)
         {
             foreach (Producto producto in Comercio.ListaProductos)
@@ -127,20 +234,33 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Carga datos al DataGridView del carrito de compras y configura las columnas a mostrar (Setea null para refrescar).
+        /// </summary>
         private void CargarDataGridViewCarritoCompras()
         {
             this.dataGridViewCarrito.DataSource = null;
             this.dataGridViewCarrito.DataSource = CarritoCompras.ListaProductosCarrito;
             this.dataGridViewCarrito.Columns["Id"].Visible = false;
             this.dataGridViewCarrito.Columns["Cantidad"].Visible = false;
-            this.lblSubTotalCifraHome.Text = CarritoCompras.GetPrecioSubTotal().ToString();
+            this.lblSubTotalCifraHome.Text = Math.Round(CarritoCompras.GetPrecioSubTotal(), 2).ToString();
         }
 
+        /// <summary>
+        /// Obtiene la fila selecciona al hacer solo un click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewProductos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             idDoubleClickedRow = ObtenerIdFilaSeleccionadaProductos(e);
         }
 
+        /// <summary>
+        /// Agrega un producto al carrito de compras siempre que cantidad no sea cero.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btbAgregarAlCarro_Click(object sender, EventArgs e)
         {
             int cantidadDeseada = Validaciones.ValidarInt(txtCantidadHome.Text);
@@ -156,6 +276,11 @@ namespace Kwit_E_Mart
 
         }
 
+        /// <summary>
+        /// Elimina todos los productos del carrito de compras.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnResetCar_Click(object sender, EventArgs e)
         {
             if(CarritoCompras.ListaProductosCarrito.Count > 0)
@@ -165,6 +290,11 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Remueve un producto del carrito al hacer doble click sobre el.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewCarrito_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             idDoubleClickedRow = ObtenerIdFilaSeleccionadaCarrito(e);
@@ -180,6 +310,11 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Obtiene la fila seleccionada de la lista de productos al hacer click y valida que no sea la fila head.
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private string ObtenerIdFilaSeleccionadaProductos(DataGridViewCellMouseEventArgs e)
         {
             if(e.RowIndex == -1)
@@ -192,6 +327,11 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Obtiene la fila seleccionada del carrito al hacer click y valida que no sea la fila head
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private string ObtenerIdFilaSeleccionadaCarrito(DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1)
@@ -204,14 +344,25 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Agrega un producto a la lista de productos del comercio (Utiliza sobrecarga del operador +)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void agregarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AltaProductoForm altaProductoForm = new AltaProductoForm();
             if(altaProductoForm.ShowDialog() == DialogResult.OK)
             {
-                Comercio.ListaProductos.Add(altaProductoForm.Producto);
-                CargaDataGridProductos();
-                MessageBox.Show("Carga de datos exitosa!", "Carga Exitosa");
+                if(altaProductoForm.Producto + Comercio.ListaProductos)
+                {
+                    CargaDataGridProductos();
+                    MessageBox.Show("Carga de datos exitosa!", "Carga Exitosa");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo completar la carga!", "Operación incompleta");
+                }
             }
             else
             {
@@ -219,6 +370,11 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Agrega Productos, ventas, clientes y carga el dataGridView de productos al presiona el boton correspondiente del menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void agregarDatosPruebaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Comercio.ListaProductos.Count == 0 && Comercio.ListaPersonas.Count == 2)
@@ -226,9 +382,15 @@ namespace Kwit_E_Mart
                 CargaInicialClientes();
                 CargaInicialProductos();
                 CargaDataGridProductos();
+                cargaInicialVentas();
             }
         }
 
+        /// <summary>
+        /// Modifica el producto llamando al Form necesario al presiona el boton correspondiente del menú.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modificarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BuscarProductoForm buscarProductoForm = new BuscarProductoForm();
@@ -243,12 +405,22 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Llama al form correspondiente para mostrar productos con menos de diez unidades.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void stockMenorADiezToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StockMenosDiezForm stockMenosDiezForm = new StockMenosDiezForm();
             stockMenosDiezForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Inicia el proceso de compra validando todo lo necesario (Carrito no este vacio, no haya mas productos que en el stock, etc).
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnComprarHome_Click(object sender, EventArgs e)
         {
             if(CarritoCompras.ListaProductosCarrito.Count > 0)
@@ -282,6 +454,9 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Reproduce el sonido personalizado al efectuarse una compra exitosamente.
+        /// </summary>
         private void RepodrucirSonidoDeCompra()
         {
             try
@@ -295,21 +470,35 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Genera la ruta del arcivho de sonido wav para la venta exitosa.
+        /// </summary>
+        /// <returns>Ruta del archivo de audio .wav.</returns>
         private string GetSongPath()
         {
             return System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "rockGuitar.wav");
         }
 
+        /// <summary>
+        /// Setea el empleado actual logeado.
+        /// </summary>
+        /// <param name="empleado"></param>
         public void SetEmpleadoSesionActual(Empleado empleado)
         {
             empleadoActual = empleado;
         }
-        #endregion
 
+        /// <summary>
+        /// Llama al Form necesario para mostrar las ventas por empleado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void porEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EmpleadosForm empleadosForm = new EmpleadosForm();
             empleadosForm.ShowDialog();
         }
+        #endregion
+
     }
 }

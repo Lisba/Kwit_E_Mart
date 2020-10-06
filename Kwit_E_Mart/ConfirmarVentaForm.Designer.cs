@@ -33,8 +33,6 @@
             this.lblTituloConfirmarCompra = new System.Windows.Forms.Label();
             this.btnConfirmarCompra = new System.Windows.Forms.Button();
             this.lblPrecioTotalCompra = new System.Windows.Forms.Label();
-            this.lblClienteCompra = new System.Windows.Forms.Label();
-            this.lblEmpleadoCompra = new System.Windows.Forms.Label();
             this.dataGridViewConfirmarCompra = new System.Windows.Forms.DataGridView();
             this.lblClienteConfirmacion = new System.Windows.Forms.Label();
             this.lblEmpleadoConfirmacion = new System.Windows.Forms.Label();
@@ -79,28 +77,6 @@
             this.lblPrecioTotalCompra.TabIndex = 22;
             this.lblPrecioTotalCompra.Text = "Total a pagar";
             // 
-            // lblClienteCompra
-            // 
-            this.lblClienteCompra.AutoSize = true;
-            this.lblClienteCompra.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClienteCompra.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblClienteCompra.Location = new System.Drawing.Point(326, 272);
-            this.lblClienteCompra.Name = "lblClienteCompra";
-            this.lblClienteCompra.Size = new System.Drawing.Size(68, 19);
-            this.lblClienteCompra.TabIndex = 23;
-            this.lblClienteCompra.Text = "Cliente";
-            // 
-            // lblEmpleadoCompra
-            // 
-            this.lblEmpleadoCompra.AutoSize = true;
-            this.lblEmpleadoCompra.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleadoCompra.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblEmpleadoCompra.Location = new System.Drawing.Point(326, 240);
-            this.lblEmpleadoCompra.Name = "lblEmpleadoCompra";
-            this.lblEmpleadoCompra.Size = new System.Drawing.Size(87, 19);
-            this.lblEmpleadoCompra.TabIndex = 24;
-            this.lblEmpleadoCompra.Text = "Vendedor";
-            // 
             // dataGridViewConfirmarCompra
             // 
             this.dataGridViewConfirmarCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -140,7 +116,7 @@
             this.lblClienteConfirmacion.AutoSize = true;
             this.lblClienteConfirmacion.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClienteConfirmacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblClienteConfirmacion.Location = new System.Drawing.Point(419, 272);
+            this.lblClienteConfirmacion.Location = new System.Drawing.Point(326, 272);
             this.lblClienteConfirmacion.Name = "lblClienteConfirmacion";
             this.lblClienteConfirmacion.Size = new System.Drawing.Size(145, 19);
             this.lblClienteConfirmacion.TabIndex = 26;
@@ -151,7 +127,7 @@
             this.lblEmpleadoConfirmacion.AutoSize = true;
             this.lblEmpleadoConfirmacion.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmpleadoConfirmacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEmpleadoConfirmacion.Location = new System.Drawing.Point(419, 240);
+            this.lblEmpleadoConfirmacion.Location = new System.Drawing.Point(326, 240);
             this.lblEmpleadoConfirmacion.Name = "lblEmpleadoConfirmacion";
             this.lblEmpleadoConfirmacion.Size = new System.Drawing.Size(145, 19);
             this.lblEmpleadoConfirmacion.TabIndex = 27;
@@ -202,8 +178,6 @@
             this.Controls.Add(this.lblEmpleadoConfirmacion);
             this.Controls.Add(this.lblClienteConfirmacion);
             this.Controls.Add(this.dataGridViewConfirmarCompra);
-            this.Controls.Add(this.lblEmpleadoCompra);
-            this.Controls.Add(this.lblClienteCompra);
             this.Controls.Add(this.lblPrecioTotalCompra);
             this.Controls.Add(this.btnConfirmarCompra);
             this.Controls.Add(this.lblTituloConfirmarCompra);
@@ -224,8 +198,6 @@
         private System.Windows.Forms.Label lblTituloConfirmarCompra;
         private System.Windows.Forms.Button btnConfirmarCompra;
         private System.Windows.Forms.Label lblPrecioTotalCompra;
-        private System.Windows.Forms.Label lblClienteCompra;
-        private System.Windows.Forms.Label lblEmpleadoCompra;
         private System.Windows.Forms.DataGridView dataGridViewConfirmarCompra;
         private System.Windows.Forms.Label lblClienteConfirmacion;
         private System.Windows.Forms.Label lblEmpleadoConfirmacion;

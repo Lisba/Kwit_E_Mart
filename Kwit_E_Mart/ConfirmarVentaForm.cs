@@ -32,10 +32,10 @@ namespace Kwit_E_Mart
             CargardataGridViewConfirmarCompra();
             precioTotalAPagar = CarritoCompras.GetPrecioTotalAPagar(CarritoCompras.GetPrecioSubTotal(), SeleccionarClienteForm.ClienteSeleccionado);
 
-            this.lblDescuentoConfirmacion.Text = CarritoCompras.GetDescuento(CarritoCompras.GetPrecioSubTotal(), SeleccionarClienteForm.ClienteSeleccionado).ToString();
-            this.lblPrecioTotalConfirmacion.Text = precioTotalAPagar.ToString();
-            this.lblClienteConfirmacion.Text = SeleccionarClienteForm.ClienteSeleccionado.SayNameLastname(HomeForm.EmpleadoActual.Nombre, HomeForm.EmpleadoActual.Apellido);
-            this.lblEmpleadoConfirmacion.Text = HomeForm.EmpleadoActual.SayNameLastname(SeleccionarClienteForm.ClienteSeleccionado.Nombre, SeleccionarClienteForm.ClienteSeleccionado.Apellido);
+            this.lblDescuentoConfirmacion.Text = Math.Round(CarritoCompras.GetDescuento(CarritoCompras.GetPrecioSubTotal(), SeleccionarClienteForm.ClienteSeleccionado),2).ToString();
+            this.lblPrecioTotalConfirmacion.Text = Math.Round(precioTotalAPagar, 2).ToString();
+            this.lblClienteConfirmacion.Text = SeleccionarClienteForm.ClienteSeleccionado.SayNameLastname(SeleccionarClienteForm.ClienteSeleccionado.Nombre, SeleccionarClienteForm.ClienteSeleccionado.Apellido);
+            this.lblEmpleadoConfirmacion.Text = HomeForm.EmpleadoActual.SayNameLastname(HomeForm.EmpleadoActual.Nombre, HomeForm.EmpleadoActual.Apellido);
         }
 
         private void CargardataGridViewConfirmarCompra()
