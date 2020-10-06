@@ -16,8 +16,6 @@ namespace Kwit_E_Mart
     public partial class HomeForm : Form
     {
         #region Fields
-        List<Empleado> listaEmpleados;
-        List<Cliente> listaClientes;
         string idDoubleClickedRow;
         static Empleado empleadoActual;
         #endregion
@@ -36,23 +34,10 @@ namespace Kwit_E_Mart
         public HomeForm()
         {
             InitializeComponent();
-            listaEmpleados = new List<Empleado>();
-            listaClientes = new List<Cliente>();
         }
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Carga las listas con los datos del comercio al cargar el form.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void HomeForm_Load(object sender, EventArgs e)
-        {
-            listaEmpleados = Comercio.GetListaDeEmpleados();
-            listaClientes = Comercio.GetListaDeClientes();
-        }
-
         /// <summary>
         /// Carga el DataGridView de productos (Setea null para refrescar).
         /// </summary>
@@ -88,7 +73,7 @@ namespace Kwit_E_Mart
             Comercio.ListaPersonas.Add(new Cliente("Homero", "Simpson", 23425584, "homerosimpson@hotmail.com"));
             Comercio.ListaPersonas.Add(new Cliente("Bart", "Simpson", 23425584, "homerosimpson@hotmail.com"));
             Comercio.ListaPersonas.Add(new Cliente("Javier", "Barroso", 93423484));
-            Comercio.ListaPersonas.Add(new Cliente("Keimarly", "Cisnero", 82523484));
+            Comercio.ListaPersonas.Add(new Cliente("Keimarly", "Cisnero", 82523484, "keimarly1210@gmail.com"));
             Comercio.ListaPersonas.Add(new Cliente("Ketty", "Leon", 78423484));
         }
 
@@ -105,59 +90,57 @@ namespace Kwit_E_Mart
             Comercio.ListaProductos.Add(new Producto("Destorn. Estría", 70, 200.10));
             Comercio.ListaProductos.Add(new Producto("Destorn. Plano", 70, 200.10));
             Comercio.ListaProductos.Add(new Producto("Llave Ing. 3/4", 100, 150.00));
-            Comercio.ListaProductos.Add(new Producto("Llave Ing. 2/4", 100, 150.00));
-            Comercio.ListaProductos.Add(new Producto("Llave Ing. 1/4", 100, 150.00));
-            Comercio.ListaProductos.Add(new Producto("Manguera Roja", 200, 50.10));
-            Comercio.ListaProductos.Add(new Producto("Manguera Verde", 200, 50.10));
-            Comercio.ListaProductos.Add(new Producto("Manguera Azul", 200, 50.10));
-            Comercio.ListaProductos.Add(new Producto("Manguera P.", 200, 50.10));
-            Comercio.ListaProductos.Add(new Producto("Manguera M.", 200, 50.10));
-            Comercio.ListaProductos.Add(new Producto("Manguera G.", 150, 80.20));
-            Comercio.ListaProductos.Add(new Producto("Llave Cruz", 50, 500.00));
-            Comercio.ListaProductos.Add(new Producto("Llave Fra. 1/4", 100, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Ing. 2/4", 230, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Ing. 1/4", 160, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Manguera Roja", 267, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera Verde", 256, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera Azul", 205, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera P.", 703, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera M.", 202, 50.10));
+            Comercio.ListaProductos.Add(new Producto("Manguera G.", 151, 80.20));
+            Comercio.ListaProductos.Add(new Producto("Llave Cruz", 6, 500.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Fra. 1/4", 300, 150.00));
             Comercio.ListaProductos.Add(new Producto("Llave Fra. 2/4", 100, 150.00));
-            Comercio.ListaProductos.Add(new Producto("Llave Fra. 3/4", 100, 150.00));
-            Comercio.ListaProductos.Add(new Producto("Llave Fra. 4/4", 100, 150.00));
-            Comercio.ListaProductos.Add(new Producto("Llave Ing. 4/4", 100, 150.00));
-            Comercio.ListaProductos.Add(new Producto("Tornillo G.", 500, 40.00));
-            Comercio.ListaProductos.Add(new Producto("Tornillo M.", 500, 30.00));
-            Comercio.ListaProductos.Add(new Producto("Tornillo P.", 500, 20.00));
-            Comercio.ListaProductos.Add(new Producto("Tornillo Estria", 200, 50.00));
-            Comercio.ListaProductos.Add(new Producto("Tornillo Plano", 200, 50.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Fra. 3/4", 400, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Fra. 4/4", 5, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Llave Ing. 4/4", 200, 150.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo G.", 400, 40.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo M.", 550, 30.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo P.", 520, 20.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo Estria", 210, 50.00));
+            Comercio.ListaProductos.Add(new Producto("Tornillo Plano", 280, 50.00));
             Comercio.ListaProductos.Add(new Producto("Tornillo Estrella", 9, 40.00));
             Comercio.ListaProductos.Add(new Producto("Juego de tornillos", 80, 1100.00));
             Comercio.ListaProductos.Add(new Producto("Juego de Destorn.", 5, 1500.00));
         }
 
         /// <summary>
-        /// Carga 50 compras al comercio.
+        /// Carga compras al comercio automaticamente llamando al metodo correspondiente.
         /// </summary>
         private void cargaInicialVentas()
         {
-            List<Producto> listaDeProductos;
+            List<Producto> listaDeProductos = new List<Producto>();
 
-            for (int i=1; i<15; i++)
+            LoopCargarVentasAutomaticamente(8, 0, 1, listaDeProductos);
+            LoopCargarVentasAutomaticamente(12, 5, 0, listaDeProductos);
+            LoopCargarVentasAutomaticamente(8, 4, 1, listaDeProductos);
+            LoopCargarVentasAutomaticamente(12, 3, 0, listaDeProductos);
+            LoopCargarVentasAutomaticamente(8, 5, 1, listaDeProductos);
+            LoopCargarVentasAutomaticamente(8, 4, 0, listaDeProductos);
+        }
+
+        /// <summary>
+        /// Instancia ventas con los valores recibidos por parametro.
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <param name="empleado"></param>
+        /// <param name="listaDeProductos"></param>
+        private void LoopCargarVentasAutomaticamente(int cantidadDeVentas, int cliente, int empleado, List<Producto> listaDeProductos)
+        {
+            for (int i = 1; i < cantidadDeVentas; i++)
             {
                 listaDeProductos = CargarListaDeProductos(i);
-                Comercio.ListaVentas.Add(new Venta(listaDeProductos, Math.Round(CarritoCompras.GetPrecioSubTotal(listaDeProductos), 2), Comercio.GetListaDeClientes()[0], Comercio.GetListaDeEmpleados()[1]));
-            }
-
-            for (int i = 1; i < 15; i++)
-            {
-                listaDeProductos = CargarListaDeProductos(i);
-                Comercio.ListaVentas.Add(new Venta(CargarListaDeProductos(i), Math.Round(CarritoCompras.GetPrecioSubTotal(listaDeProductos), 2), Comercio.GetListaDeClientes()[5], Comercio.GetListaDeEmpleados()[0]));
-            }
-
-            for (int i = 1; i < 10; i++)
-            {
-                listaDeProductos = CargarListaDeProductos(i);
-                Comercio.ListaVentas.Add(new Venta(CargarListaDeProductos(i), Math.Round(CarritoCompras.GetPrecioSubTotal(listaDeProductos), 2), Comercio.GetListaDeClientes()[4], Comercio.GetListaDeEmpleados()[1]));
-            }
-
-            for (int i = 1; i < 10; i++)
-            {
-                listaDeProductos = CargarListaDeProductos(i);
-                Comercio.ListaVentas.Add(new Venta(CargarListaDeProductos(i), Math.Round(CarritoCompras.GetPrecioSubTotal(listaDeProductos), 2), Comercio.GetListaDeClientes()[3], Comercio.GetListaDeEmpleados()[0]));
+                Comercio.ListaVentas.Add(new Venta(listaDeProductos, Math.Round(CarritoCompras.GetPrecioSubTotal(listaDeProductos), 2), Comercio.GetListaDeClientes()[cliente], Comercio.GetListaDeEmpleados()[empleado]));
             }
         }
 

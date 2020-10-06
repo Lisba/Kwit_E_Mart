@@ -56,12 +56,25 @@ namespace Entidades
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Instancia un cliente con todos sus datos (llama al constructor de la clase padre Persona).
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="email"></param>
         public Cliente(string nombre, string apellido, int dni, string email) : base(nombre, apellido, dni)
         {
             this.idPropio = id++;
             this.email = email;
         }
 
+        /// <summary>
+        /// Instancia un cliente con email vacío.
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
         public Cliente(string nombre, string apellido, int dni) : base(nombre, apellido, dni)
         {
             this.idPropio = id++;
@@ -70,6 +83,12 @@ namespace Entidades
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Devuelve el nombre y apellido en un mismo string de un cliente (sobreescritura del metodo de clase padre).
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="lastName"></param>
+        /// <returns>El string concatenando el tipo, nombre y apellido.</returns>
         public override string SayNameLastname(string name, string lastName)
         {
             StringBuilder sb = new StringBuilder();

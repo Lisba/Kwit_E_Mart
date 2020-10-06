@@ -35,6 +35,11 @@ namespace Kwit_E_Mart
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Valida los datos ingresados en los textBox e instancia un cliente con dichos datos al recibir el click sobre el boton adecuado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaCliente_Click(object sender, EventArgs e)
         {
             if (txtEmailCliente.Text == "")

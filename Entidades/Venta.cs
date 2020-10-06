@@ -69,11 +69,21 @@ namespace Entidades
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// Constructor static para inicializar el id global en 1 la primera vez que se utilice la clase Venta.
+        /// </summary>
         static Venta()
         {
             idGlobal = 1;
         }
 
+        /// <summary>
+        /// Instancia una venta.
+        /// </summary>
+        /// <param name="listaProductosVenta"></param>
+        /// <param name="precioTotal"></param>
+        /// <param name="cliente"></param>
+        /// <param name="empleado"></param>
         public Venta(List<Producto> listaProductosVenta, double precioTotal, Cliente cliente, Empleado empleado)
         {
             id = idGlobal++;

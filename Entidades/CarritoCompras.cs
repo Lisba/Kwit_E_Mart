@@ -12,6 +12,7 @@ namespace Entidades
         static List<Producto> listaProductosCarrito;
         #endregion
 
+        #region Properties
         public static List<Producto> ListaProductosCarrito
         {
             get
@@ -19,6 +20,7 @@ namespace Entidades
                 return listaProductosCarrito;
             }
         }
+        #endregion
 
         #region Constructor
         static CarritoCompras()
@@ -28,16 +30,27 @@ namespace Entidades
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Remueve un producto el carrito de compras.
+        /// </summary>
+        /// <param name="producto"></param>
         public static void RemoveItemFromShopCar(Producto producto)
         {
             listaProductosCarrito.Remove(producto);
         }
 
+        /// <summary>
+        /// Vacía el carrito de compras.
+        /// </summary>
         public static void RemoveAllItemsFromShopCar()
         {
             listaProductosCarrito.Clear();
         }
 
+        /// <summary>
+        /// Obtiene el subtotal del carrito de compras.
+        /// </summary>
+        /// <returns>El subtotal</returns>
         public static double GetPrecioSubTotal()
         {
             double subTotal = 0;
@@ -50,11 +63,16 @@ namespace Entidades
             return subTotal;
         }
 
-        public static double GetPrecioSubTotal(List<Producto> listaProductosCarrito)
+        /// <summary>
+        /// Obtiene el subtotal de la lista de productos recibida por parametro (Sobrecarga del metodo anterior).
+        /// </summary>
+        /// <param name="listaProductos"></param>
+        /// <returns>El subtotal</returns>
+        public static double GetPrecioSubTotal(List<Producto> listaProductos)
         {
             double subTotal = 0;
 
-            foreach (Producto producto in listaProductosCarrito)
+            foreach (Producto producto in listaProductos)
             {
                 subTotal += producto.PrecioUnidad;
             }
@@ -62,6 +80,12 @@ namespace Entidades
             return subTotal;
         }
 
+        /// <summary>
+        /// Valida si el cliente se apellida Simpson y devuelve el valor de descuento del 13% del subtotal recibido por parametro.
+        /// </summary>
+        /// <param name="subTotal"></param>
+        /// <param name="cliente"></param>
+        /// <returns>El descuento del 13% del subtotal recibido.</returns>
         public static double GetDescuento(double subTotal, Cliente cliente)
         {
             double returnValue = 0;
@@ -74,6 +98,12 @@ namespace Entidades
             return returnValue;
         }
 
+        /// <summary>
+        /// Resta el descuento al subtotal calculando el total a pagar.
+        /// </summary>
+        /// <param name="subTotal"></param>
+        /// <param name="cliente"></param>
+        /// <returns>Valor total a pagar con descuento aplicado.</returns>
         public static double GetPrecioTotalAPagar(double subTotal, Cliente cliente)
         {
             subTotal -= GetDescuento(subTotal, cliente);

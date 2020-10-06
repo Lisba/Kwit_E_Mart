@@ -17,6 +17,7 @@ namespace Kwit_E_Mart
         static int id;
         #endregion
 
+        #region Properties
         public static int Id
         {
             get
@@ -24,15 +25,24 @@ namespace Kwit_E_Mart
                 return id;
             }
         }
+        #endregion
 
+        #region Constructors
         public BuscarProductoForm()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Al recibir el click sobre el boton adecuado llama al form adecuado segun el id recibido en el textBox previamente validado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
-            if(int.TryParse(this.txtBuscarProducto.Text, out id))
+            if (int.TryParse(this.txtBuscarProducto.Text, out id))
             {
                 Producto producto = Comercio.ListaProductos.Find(item => item.Id == id);
 
@@ -62,5 +72,6 @@ namespace Kwit_E_Mart
                 this.DialogResult = DialogResult.No;
             }
         }
+        #endregion
     }
 }

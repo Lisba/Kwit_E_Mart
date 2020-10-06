@@ -30,6 +30,12 @@ namespace Entidades
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Deveulve en un mismo string el nombre y apellido de la persona (Virtual para aplicar polimorfismo)
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="lastName"></param>
+        /// <returns>El string concatenando nombre y apellido de la persona.</returns>
         public virtual string SayNameLastname(string name, string lastName)
         {
             StringBuilder sb = new StringBuilder();

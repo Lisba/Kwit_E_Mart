@@ -50,6 +50,10 @@ namespace Entidades
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Busca los elementos de tipo empleado de la lista de peronas y los retorna.
+        /// </summary>
+        /// <returns>La lista de empleados.</returns>
         static public List<Empleado> GetListaDeEmpleados()
         {
             List<Empleado> listaEmpleados = new List<Empleado>();
@@ -65,6 +69,10 @@ namespace Entidades
             return listaEmpleados;
         }
 
+        /// <summary>
+        /// Busca los elementos de tipo empleado de la lista de peronas y los retorna.
+        /// </summary>
+        /// <returns>La lista de clientes.</returns>
         static public List<Cliente> GetListaDeClientes()
         {
             List<Cliente> listaClientes = new List<Cliente>();
@@ -80,6 +88,11 @@ namespace Entidades
             return listaClientes;
         }
 
+        /// <summary>
+        /// Busca las ventas del empleado recibido por parametro y retorna una lista de todas sus ventas.
+        /// </summary>
+        /// <param name="empleado"></param>
+        /// <returns>La lista de ventas del empleado recibido por parametro.</returns>
         static public List<Venta> GetListaVentasEmpleado(Empleado empleado)
         {
             List<Venta> listaVentasEmpleado = new List<Venta>();
@@ -95,6 +108,10 @@ namespace Entidades
             return listaVentasEmpleado;
         }
 
+        /// <summary>
+        /// Busca los productos con cantidad menor a diez unidades.
+        /// </summary>
+        /// <returns>Lista de productos con cantidad menor a diez unidades.</returns>
         static public List<Producto> GetListaProductosMenorDiez()
         {
             List<Producto> listaProductosMenorDiez = new List<Producto>();

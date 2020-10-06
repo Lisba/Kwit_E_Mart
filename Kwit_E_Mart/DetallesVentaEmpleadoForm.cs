@@ -13,11 +13,19 @@ namespace Kwit_E_Mart
 {
     public partial class DetallesVentaEmpleadoForm : Form
     {
+        #region Constructors
         public DetallesVentaEmpleadoForm()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Carga los datos al dataGridViewDetalleCompra, los label y oculta las filas id y cantidad al cargar el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DetallesVentaEmpleadoForm_Load(object sender, EventArgs e)
         {
             this.dataGridViewDetalleCompra.DataSource = null;
@@ -29,5 +37,6 @@ namespace Kwit_E_Mart
             this.lblClienteDetalleCompra.Text = VentasEmpleadoForm.VentaSeleccionada.Cliente.SayNameLastname(VentasEmpleadoForm.VentaSeleccionada.Cliente.Nombre, VentasEmpleadoForm.VentaSeleccionada.Cliente.Apellido);
             this.lblEmpleadoDetalleCompra.Text = VentasEmpleadoForm.VentaSeleccionada.Empleado.SayNameLastname(VentasEmpleadoForm.VentaSeleccionada.Empleado.Nombre, VentasEmpleadoForm.VentaSeleccionada.Empleado.Apellido);
         }
+        #endregion
     }
 }

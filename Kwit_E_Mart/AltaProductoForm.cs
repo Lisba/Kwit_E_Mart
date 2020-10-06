@@ -17,7 +17,7 @@ namespace Kwit_E_Mart
         Producto producto;
         #endregion
 
-        #region Fields
+        #region Properties
         public Producto Producto
         {
             get 
@@ -27,11 +27,19 @@ namespace Kwit_E_Mart
         }
         #endregion
 
+        #region Constructors
         public AltaProductoForm()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Al recibir click sobre el boton adecuado valida los campos de textBox e instancia un Producto.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAltaProducto_Click(object sender, EventArgs e)
         {   
             if (Validaciones.ValidarString(txtNombreProducto.Text) && Validaciones.ValidarInt(txtCantidadProducto.Text) != -1 && Validaciones.ValidarDouble(txtPrecioUnidadProducto.Text) != -1)
@@ -44,5 +52,6 @@ namespace Kwit_E_Mart
                 this.DialogResult = DialogResult.No;
             }
         }
+        #endregion
     }
 }

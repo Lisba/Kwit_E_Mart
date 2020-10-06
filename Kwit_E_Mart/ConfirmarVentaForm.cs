@@ -27,6 +27,11 @@ namespace Kwit_E_Mart
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Carga datos al dataGridViewConfirmarCompra y los label del formulario al cargar el formulario llamando a los metodos adecuados.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ConfirmarVentaForm_Load(object sender, EventArgs e)
         {
             CargardataGridViewConfirmarCompra();
@@ -38,6 +43,9 @@ namespace Kwit_E_Mart
             this.lblEmpleadoConfirmacion.Text = HomeForm.EmpleadoActual.SayNameLastname(HomeForm.EmpleadoActual.Nombre, HomeForm.EmpleadoActual.Apellido);
         }
 
+        /// <summary>
+        /// Carga los datos al dataGridViewConfirmarCompra ocultando las filas id y cantidad.
+        /// </summary>
         private void CargardataGridViewConfirmarCompra()
         {
             this.dataGridViewConfirmarCompra.DataSource = null;
@@ -46,6 +54,11 @@ namespace Kwit_E_Mart
             this.dataGridViewConfirmarCompra.Columns["Cantidad"].Visible = false;
         }
 
+        /// <summary>
+        /// Genera una instancia de venta al recibir click sobre el boton adecuado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirmarCompra_Click(object sender, EventArgs e)
         {
             CapturarListaProductosComprados();
@@ -54,6 +67,9 @@ namespace Kwit_E_Mart
             this.DialogResult = DialogResult.OK;
         }
 
+        /// <summary>
+        /// Carga la listaProductosComprados con los productos del carrito en el momento para ser usada luego en el historial de ventas.
+        /// </summary>
         private void CapturarListaProductosComprados()
         {
             foreach (Producto producto in CarritoCompras.ListaProductosCarrito)

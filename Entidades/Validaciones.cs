@@ -87,14 +87,14 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Valida una dirección de email.
+        /// Valida una dirección de email utilizando una expresion regular.
         /// </summary>
         /// <param name="strValue"></param>
         /// <returns>Retorna true si el email es válido, caso contrario retorna false.</returns>
         static public bool ValidarEmail(string strValue)
         {
             bool returnValue = false;
-            string regex = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            string regex = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*"; // Expresion Regular para determinar un email válido.
 
             if (Regex.IsMatch(strValue, regex))
             {

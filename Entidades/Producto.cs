@@ -61,6 +61,12 @@ namespace Entidades
             idGlobal = 1;
         }
 
+        /// <summary>
+        /// Instancia un Producto.
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="cantidad"></param>
+        /// <param name="precioUnidad"></param>
         public Producto(string nombre, int cantidad, double precioUnidad)
         {
             id = idGlobal++;

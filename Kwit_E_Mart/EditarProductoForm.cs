@@ -35,6 +35,11 @@ namespace Kwit_E_Mart
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Genera una instancia de producto previamente validando los datos de los textBox al recibir click sobre el boton adecuado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
             if (Validaciones.ValidarString(txtEditarNombreProducto.Text) && Validaciones.ValidarInt(txtEditarCantidadProducto.Text) != -1 && Validaciones.ValidarDouble(txtEditarPrecioProducto.Text) != -1)
@@ -48,6 +53,11 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Carga los TextBox con la informacion actual del producto a editar para se usados como referencia.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditarProductoForm_Load(object sender, EventArgs e)
         {
             producto = BuscarProductoAEditar();
@@ -56,6 +66,10 @@ namespace Kwit_E_Mart
             txtEditarPrecioProducto.Text = producto.PrecioUnidad.ToString();
         }
 
+        /// <summary>
+        /// Busca el producto a editar para usar su informacion actual como referencia.
+        /// </summary>
+        /// <returns>El producto a editar.</returns>
         public Producto BuscarProductoAEditar()
         {
             Producto producto = Comercio.ListaProductos.Find(item => item.Id == BuscarProductoForm.Id);

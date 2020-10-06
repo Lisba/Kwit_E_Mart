@@ -14,7 +14,6 @@ namespace Kwit_E_Mart
     public partial class VentasEmpleadoForm : Form
     {
         #region Fields
-        List<Venta> listaVentasEmpleadoSeleccionado;
         string idDoubleClickedRow;
         static Venta ventaSeleccionada;
         #endregion
@@ -33,16 +32,23 @@ namespace Kwit_E_Mart
         public VentasEmpleadoForm()
         {
             InitializeComponent();
-            listaVentasEmpleadoSeleccionado = new List<Venta>();
         }
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Carga el dataGridViewVentasEmpleado llamando al metodo adecuado al cargar el formulario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void VentasEmpleadoForm_Load(object sender, EventArgs e)
         {
             CargarDataGridViewVentasEmpleado();
         }
 
+        /// <summary>
+        /// Carga el dataGridViewVentasEmpleado con datos y oculta las filas Cliente y Empleado.
+        /// </summary>
         private void CargarDataGridViewVentasEmpleado()
         {
             this.dataGridViewVentasEmpleado.DataSource = null;
@@ -52,11 +58,20 @@ namespace Kwit_E_Mart
             this.dataGridViewVentasEmpleado.Columns["Empleado"].Visible = false;
         }
 
+        /// <summary>
+        /// Retorna la lista de ventas del empleado seleccionado.
+        /// </summary>
+        /// <returns>La lista de ventas del empleado seleccionado.</returns>
         private List<Venta> CargarVentasDeEmpleadoSeleccionado()
         {
             return Comercio.GetListaVentasEmpleado(EmpleadosForm.EmpleadoSeleccionado);
         }
 
+        /// <summary>
+        /// Carga en la propiedad ventaSeleccionada la venta del empleado a la cual se hizo doble click en el DataGridView y llama al formulario correspondiente.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridViewVentasEmpleado_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             idDoubleClickedRow = ObtenerIdFilaSeleccionadaVenta(e);
@@ -72,6 +87,11 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Obtiene el id de la fila seleccionada y valida que no sea la fila head.
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns></returns>
         private string ObtenerIdFilaSeleccionadaVenta(DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex == -1)
@@ -84,6 +104,9 @@ namespace Kwit_E_Mart
             }
         }
 
+        /// <summary>
+        /// Llama al formulario detallesVentaEmpleadoForm.
+        /// </summary>
         private void LlamarDetallesVentaEmpleadoForm()
         {
             DetallesVentaEmpleadoForm detallesVentaEmpleadoForm = new DetallesVentaEmpleadoForm();

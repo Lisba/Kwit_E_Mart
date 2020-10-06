@@ -384,7 +384,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kwik E Mart - Lisbaldy Ojeda";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomeForm_FormClosing_1);
-            this.Load += new System.EventHandler(this.HomeForm_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HomeForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarrito)).EndInit();

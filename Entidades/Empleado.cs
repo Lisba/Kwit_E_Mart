@@ -84,6 +84,12 @@ namespace Entidades
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Devuelve el nombre y apellido en un mismo string de un empleado (sobreescritura del metodo de clase padre).
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="lastName"></param>
+        /// <returns>El string concatenando el tipo, nombre y apellido.</returns>
         public override string SayNameLastname(string name, string lastName)
         {
             StringBuilder sb = new StringBuilder();
